@@ -9,6 +9,7 @@ Authentication
 
 Basic Authentication
 --------------------
+
 많은 웹서비스들이 HTTP 기본 인증을 요구합니다.
 이것은 가장 간단한 종류입니다, 그리고 Requests는 독창적인 방법으로 지원합니다.
 
@@ -27,9 +28,9 @@ HTTP 기본 인증을 필요로하는 리퀘스트를 만드는것은 매우 간
 auth파라메터에 튜플로 넣는 것은 위의 예제와 같이 ``HTTPBasicAuth``로 인증하는것과 같습니다.
 
 
-
 netrc Authentication
 ~~~~~~~~~~~~~~~~~~~~
+
 만약 인증 메소드가 없고 ``auth``인자가 주어진, Requests는 URL의 hostname 에 인증을 위한 user's netrc 파일으로부터 시도할것입니다.
 netrc 파일은 HTTP 인증 헤더를 무시합니다?
 
@@ -39,6 +40,7 @@ netrc 파일은 HTTP 인증 헤더를 무시합니다?
 
 Digest Authentication
 ---------------------
+
 HTTP 인증폼에서 유명한것중 하나인 Digest Authentication은
 그리고 Requests는 이것을 다음과 같이 지원합니다. ::
 
@@ -50,6 +52,7 @@ HTTP 인증폼에서 유명한것중 하나인 Digest Authentication은
 
 OAuth 1 Authentication
 ----------------------
+
 OAuth는 여러 web API들을 이용하기 위한 흔한 인증폼입니다.
 ``requests-oauthlib`` 라이브러리는 Requests 유자가 쉽게 OAuth 인증 리퀘스트 만드는것을 도와줍니다::
 
@@ -71,6 +74,7 @@ requests-oauthlib에 관한 예제와 문서는 GitHub의 `requests_oauthlib`_ �
 
 Other Authentication
 --------------------
+
 리퀘스트는 다른 인증폼을 쉽고 빠르게 연결시킬수 있게 디자인 되었습니다.
 오픈소스 커뮤니티 멤버들은 복잡하거나 잘 사용하지 않는인증 핸들러를 자유롭게 만들 수 있습니다.
 `Requests organization`_에서 다음과 같은것들을 가져와 사용할 수 있습니다.
@@ -82,6 +86,7 @@ Other Authentication
 
 New Forms of Authentication
 ---------------------------
+
 만약 원하는 인증폼을 실행하는것을 찾지 못했을땐, 직접 만들어 실행하게 만들 수 있습니다.
 Requests는 당신만의 인증폼을 쉽게 추가할수 있습니다.
 

@@ -2,11 +2,13 @@
 
 Installation
 ============
+
 이 문서는 Requests의 설치를 담고있습니다.
 어떠한 소프트웨어 패키지를 이용하던지 가장 첫번째 순서는 재대로 설치하는것 입니다.
 
 Pip Install Requests
 --------------------
+
 Requests를 설치하는 간편한 방법은 terminal에서 아래의 코드를 쓰는것입니다::
 
     $ pip install requests
@@ -18,6 +20,7 @@ Requests를 설치하는 간편한 방법은 terminal에서 아래의 코드를 
 
 Get the Source Code
 -------------------
+
 Requests는 GitHub에서 개발되고 있습니다. 코드는 `이곳 <https://github.com/kennethreitz/requests>`_ 에서 언제든 받을 수 있습니다.
 
 또한 public repository를 복사 할수 있습니다 ::

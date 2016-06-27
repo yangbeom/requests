@@ -38,6 +38,7 @@ Requests 는 버그리포팅 혹은 특색에 대한 요구던지 모든 기여�
 
 Get Early Feedback
 ------------------
+
 만약 당신이 기여를 했다면, 이것은 완벽하게 다듬고 완성할때까지 당신의 기여가 끝났다고 생각하지 마세요.
 모든 사람들이 도와 가능한 많은 피드백을 줄것입니다. 당신은 그 피드백을 가능한 빨리 처리해주세요.
 당신의 기여가 편견없는 피드백을 받기위해 마무리되지 않은버전을 올려 운좋게 기여가 받아지길 원하거나,
@@ -45,6 +46,7 @@ Get Early Feedback
 
 Contribution Suitability
 ------------------------
+
 우리 프로젝트의 메인테이너는 Requests의  적합한 기여인지 아닌지를 확인합니다.
 모든 기여는 조심히 생각한후,그러나 가끔, 기여는 거절당할것입니다.
 왜냐하면 그들은 프로젝트의 궁극적인 목표와 필요에 맞지 않기때문입니다.
@@ -70,8 +72,10 @@ Steps for Submitting Code
    GitHub Pull Requests 는 이 프로젝트와 협업할수있는 방법입니다.
 
 따라야 하는 세부 항목은 아래에 적혀있습니다.
+
 Code Review
 ~~~~~~~~~~~
+
 In the event that you object to the code review feedback, you should make your case clearly and calmly.
 If, after doing so, the feedback is judged to still apply, you must either apply the feedback or withdraw your contribution.
 
@@ -82,6 +86,7 @@ If, after doing so, the feedback is judged to still apply, you must either apply
 
 New Contributors
 ~~~~~~~~~~~~~~~~
+
 만약 당신이 오픈소스를 처음 접하거나 이곳에 처음이여도 환영합니다.
 Requests는 오픈소스의 세계에 쉽게 접할수있게 초점이 맞춰져있습니다.
 만약 니가 어떻게 최고의 기여에 대해서 흥미를 갖고있다면, 메인테이너에게 메일을 보내는것을 고려해보거나 도움을 요청하세요.
@@ -154,6 +159,7 @@ Python 코드를 설명할때 작은 따옴표를 사용하여 문자열을 나�
 
 Bug Reports
 -----------
+
 버그리포트는 매우 중요합니다
 버그 리포트를 하기전에 open된 이슈던 closed된 이슈던지 `GitHub issues`_ 를 통해 버그가 이전에 알려진것이 아닌지 확인하세요.
 가능하다면 다른 기여자들이 많은 시간을 소비한 버그리포트를 복사하여 사용하여도 괜찮습니다.
@@ -163,6 +169,7 @@ Bug Reports
 
 Feature Requests
 ----------------
+
 Requests는 아직 feature freeze 상태에 있습니다.
 단지 BDFL만이 추가하거나 새로운 특징에 대해 찬성할수 있습니다.
 메인테이너들은 Requests는 이 시기에 소프트웨어의 최상의 일부가 될것으로 믿고있습니다.

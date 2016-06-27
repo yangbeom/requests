@@ -9,6 +9,7 @@ Requests는 활발한 개발자와 컨트리뷰터등 많은 참여를 환영합
 #. 버그를 고쳤다는것은 보여줄수있는 테스트를 작성하세요.
 #. 메인 테이너가 merged 하거나 공개될때까지 버그와 pull request를 보내주세요
    반드시 `AUTHORS <https://github.com/kennethreitz/requests/blob/master/AUTHORS.rst>`_ 에 자신을 추가하세요.
+
 Feature Freeze
 --------------
 
@@ -18,6 +19,7 @@ v1.0.0 , Requests는 feature freeze상태에 들어서 있습니다.
 
 Development Dependencies
 ------------------------
+
 당신은 Requests의 테스트를 구동하기위해 py.test를 설치해야 합니다. ::
 
     $ pip install -r requirements.txt
@@ -45,8 +47,10 @@ Google App Engine 공식적으로 지원하지 않습니다. 호환성을위한 
 
 Are you crazy?
 --------------
+
 - C extensions 없이 SPDY 지원은 엄청난것입니다.
 
 Downstream Repackaging
 ----------------------
+
 만약 니가 Requests 리패키징을 원한다면, 당신은 올바른 SSL기능을 위해 ``cacerts.pem``파일을 재배포해야합니다.

@@ -4,6 +4,7 @@ Requests는 오픈되어 있으나 독선적인 라이브러리이며 제작에 
 
 Management Style
 ~~~~~~~~~~~~~~~~
+
 `Kenneth Reitz <http://kennethreitz.org>`_ 는 BDFL입니다.
 그는 모든 Requests 프로젝트에 관한 최종 발언권을 갖고있습니다.
 Kenneth는 라이브러리의 방향과 형태를 책임지고 있습니다.
@@ -18,6 +19,7 @@ Kenneth만이 Requests에 코드를 merge할 수 있습니다.
 그들은 Kenneth가 수용할지 말지에 대한 판단을 맡고있습니다.
 그들은 코드변경과 변경된 코드 merge에 관한 권한은 없지만 문서를 변경할수 있습니다.
 그들의 이야기는 끝이아닙니다.
+
 Values
 ~~~~~~
 

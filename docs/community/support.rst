@@ -4,6 +4,7 @@ Support
 =======
 
 만약 질문 혹은 문제가 있다면, 다음과 같은 몇가지 옵션으로 해결할 수 있습니다.
+
 StackOverflow
 -------------
 
@@ -33,9 +34,9 @@ E-mail
 저는 Requests에 관한 질문에 답하는 것을 싫어 하지 않습니다.
 언제든 `requests@kennethreitz.com <mailto:requests@kennethreitz.com>`_으로 메일을 보내주세요.
 
+
 IRC
 ---
-
 
 Requests 공식 Freenode 채널 주소는 `#python-requests <irc://irc.freenode.net/python-requests>`_ 입니다.
 ``#python-requests`` 에서 다음 핵심 개발자들을 쉽게 만나볼 수 있습니다.

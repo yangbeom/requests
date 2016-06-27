@@ -19,6 +19,7 @@ Requests는 User-Agent를 쉽게 변경할수 있습니다. 물론 어떠한 HTT
 
 Why not Httplib2?
 -----------------
+
 Chris Adams 가 `Hacker News <http://news.ycombinator.com/item?id=2884406>`_ 에 요약해 두었습니다.
 
     httplib2 is part of why you should use requests: it's far more respectable
@@ -43,6 +44,7 @@ Chris Adams 가 `Hacker News <http://news.ycombinator.com/item?id=2884406>`_ 에
 
 Python 3 Support?
 -----------------
+
 물론입니다! 다음은 공식적으로 지원하는 Python 버전들입니다
 
 * Python 2.6

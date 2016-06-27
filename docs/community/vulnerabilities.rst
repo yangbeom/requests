@@ -1,5 +1,6 @@
 Vulnerability Disclosure
 ========================
+
 만약 Requests의 일반적인 파일 이슈가 아닌 보안취약점에 대해 발견했다면,
 `sigmavirus24 <mailto:graffatcolmingov@gmail.com>`_ 와 `Lukasa <mailto:cory@lukasa.co.uk>`_ 로 이메일을 보내주세요.
 
@@ -20,11 +21,13 @@ Vulnerability Disclosure
 
 Process
 -------
+
 Requests 프로젝트를 사용하는 사용자의 취약점 제보로 이루어집니다.
 만약 당신이 어떤 취약점을 알리고싶다면, 문서의 이 섹션에서 당신이 우리에게 문제점을 보내는 방법을 알려줍니다.
 
 Timeline
 ~~~~~~~~
+
 이슈를 알려준다면, 프로젝트 멤버가 2일안에 답장을 해줄것입니다.
 대부분은 이보다 빠른 12시간 안에 이뤄질것입니다.
 이 초기 응답은 보낸 리포트에 의해 최소한으로 검증될것입니다.
@@ -67,8 +70,10 @@ if upgrading is not an option.
 
  다른 방법으로 쉽게 고칠 수 있게 그리고 유저들이 만약 업그레이드에 대한 옵션이 없다면 그들의 requests 버전을 쉽게 패치하는것을 위해
  우리는 또한 멘션을 남길것입니다.
+
 Previous CVEs
 -------------
+
 - Fixed in 2.6.0
 
   - `CVE 2015-2296 <http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2015-2296>`_,

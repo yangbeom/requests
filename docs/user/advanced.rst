@@ -85,6 +85,7 @@ cookie를 이용하여 계속하여 리퀘스트를 전송해 봅시다 ::
 
 Request and Response Objects
 ----------------------------
+
 첫째로, 당신은 서버에 보내기위한 리퀘스트 혹은 쿼리를 ``Request`` 오브젝트 를 구성할수 있습니다.
 언제던 ``requests.get()``을 만들어 부를수 있습니다. 그리고 중요한 친구인 두개도 같이 부를수있습니다.
 두번째로, ``Response`` 오브젝트는 하나의 ``requests``의 서버에서 온 응답으로 얻을 수 있습니다.
@@ -118,6 +119,7 @@ Request and Response Objects
 
 Prepared Requests
 -----------------
+
 API 콜 또는 Session 콜을 통하여 :class:`Response <requests.Response>`를 받을때
 ``request``는 실제로 이전에 사용된 ``PreparedRequest``의 결과로 봅니다.
 당신은 request를 보내기전에 바디나 헤더 혹은 어디서든 추가적인 일을 원할 수 있습니다.
@@ -183,7 +185,6 @@ API 콜 또는 Session 콜을 통하여 :class:`Response <requests.Response>`를
 SSL Cert Verification
 ---------------------
 
-
 Requests는 HTTPS리퀘스트의 SSL 인증서를 웹브라우저처럼 확인합니다.
 기본적으로,SSL 인증서를 사용할때, 인증 불가능한 인증서라면 requests는 SSLError를 던질것입니다. ::
 
@@ -246,6 +247,7 @@ Requests 2.4.0버전부터, Requests는 현재 사용하는 시스템의 `certif
 
 Body Content Workflow
 ---------------------
+
 기본적으로 request를 만들때 응답의 body를 즉시 다운로드받습니다.
 당신은 이 행동을 override 할 수 있습니다.
 그리고 respone의 바디를 ``stream`` 파라메터를 이용하여 :class:`Response.content <requests.Response.content>`에 접근
@@ -285,6 +287,7 @@ Requests는 당신이 모든 데이터를 소진할때까지 또는 :class:`Resp
 
 Keep-Alive
 ----------
+
 좋은 소식입니다 — urllib3 감사합니다, session 안에서 keep-alive를 100% 자동으로 지원합니다!
 어떤 리퀘스트들이던 당신은 session을 이용하여 자동으로 적절한 연결을 재사용합니다.
 
@@ -295,6 +298,7 @@ Keep-Alive
 
 Streaming Uploads
 -----------------
+
 리퀘스트는 큰파일을 전송하거나 메모리에서 파일을 읽지않고 전송하는 스트리밍 업로드를 지원합니다.
 스트림과 업로드를 위해, 간단하게 전송할 파일을 body에 추가하기만 하면 됩니다.::
 
@@ -313,6 +317,7 @@ Streaming Uploads
 
 Chunk-Encoded Requests
 ----------------------
+
 Requests는 또한 들어오는 requests에 맞춰 보내는 것을 지원합니다.
 chunk-encoded 리퀘스트를 보내기 위해서는, 간단한 생성자(또는 길이에 상관없는 반복자)를 제공합니다.::
 
@@ -332,6 +337,7 @@ chunked encoded 응답들을 위해, :meth:`Response.iter_content() <requests.mo
 
 POST Multiple Multipart-Encoded Files
 -------------------------------------
+
 당신은 많은 파일을 하나의 request에 보낼 수 있습니다.
 예를들어, 당신이  HTML폼에 여러 파일 필드로 image파일을 업로드를 원한다고 생각해보세요::
 
@@ -364,6 +370,7 @@ POST Multiple Multipart-Encoded Files
 
 Event Hooks
 -----------
+
 Requests는 당신이 request 프로세스의 일부를 조정하거나 signal 이벤트를 제어하기 위한 hook 시스템을 갖고있습니다.
 사용 가능한 hook들:
 
@@ -396,6 +403,7 @@ Let's print some request method arguments at runtime::
 
 Custom Authentication
 ---------------------
+
 리퀘스트는 사용자만의 인증 메커니즘을 명시해 사용할 수 있습니다.
 
 ``auth`` 인자가 필요한 request 메소드는 이것을 보내기전에 수정하는 기회를 갖을 것입니다.
@@ -427,6 +435,7 @@ Custom Authentication
 
 Streaming Requests
 ------------------
+
 :class:`requests.Response.iter_lines()`를 이용하여 쉽게 많은 양이 반복되는 `Twitter Streaming
 API <https://dev.twitter.com/streaming/overview>`_ 와 같은 streaming API들을 처리할 수 있습니다.
 간단하게 ``stream``을 ``True``로 설정하고 반복되는 많은 응답들을 :class:`~requests.Response.iter_lines()`로 처리하면 됩니다::
@@ -460,6 +469,7 @@ API <https://dev.twitter.com/streaming/overview>`_ 와 같은 streaming API들�
 
 Proxies
 -------
+
 만약 당신이 프록시를 사용하기 원한다면, 당신은 개별적으로 ``proxies`` 인자를 request 메소드를 통해 requests의 환경을 설정해야합니다::
 
     import requests
@@ -517,12 +527,14 @@ SOCKS
 
 Compliance
 ----------
+
 Requests는 적절한 설계되어 설계를 따르고 있습니다.
 그리고 유저에게 곤란을 만들지 않는 RFC를 준수합니다.
 이렇게 명시된 사양을 따르는것은 그렇지 않은 사람들에게도 의미있는 일입니다.
 
 Encodings
 ^^^^^^^^^
+
 응답을 받았을때, Requests는 :attr:`Response.text <requests.Response.text>`을 이용할때
 decoding을 하기 위해 encoding을 추측해 만듭니다.
 Requests는 처음으로 HTTP header안에 encoding을 확인합니다. 그리고 비어있다면
@@ -539,6 +551,7 @@ Requests는 이 경우 사양을 따릅니다.
 
 HTTP Verbs
 ----------
+
 Requests는 거의 모든 HTTP 구문(GET, OPTIONS,HEAD, POST, PUT, PATCH 그리고 DELETE)을 지원합니다.
 다음은 다양한 구문을 Requests로 GitHub API를 이용하는 예제를 제공합니다.
 
@@ -742,6 +755,7 @@ Requests 는 자동으로 이 link 헤더들을 분석하고 사용하기 쉽게
 
 Transport Adapters
 ------------------
+
 v1.0.0 이후로 Requests는 내부 디자인이 모듈러로 바뀌었습니다.
 이러한 이유로 이것은 되었습니다 전송 어댑터를 구현했습니다.  `described here`_ 에 자세히 적혀있습니다.
 전송 어뎁터는 HTTP 서비스를 위한 상호작용 메소드를 정의하는 메카니즘으로 제공됩니다.
@@ -767,6 +781,7 @@ Requests는 유저가 만든 전송 어뎁터를 특정한 기능에 사용할 �
 
 Example: Specific SSL Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Requests 팀은 어떤 SSL버전이던 기본적으로 `urllib3`_ 를 이용해 선택합니다.
 보통은 이것은 괜찮습니다. 그러나 실시간으로 당신이 기본값으로 호환되지 않는 서비스에 연결이 필요할 수 있습니다.
 
@@ -796,7 +811,6 @@ Requests 팀은 어떤 SSL버전이던 기본적으로 `urllib3`_ 를 이용해 
 Blocking Or Non-Blocking?
 -------------------------
 
-
 Requests는 기본적인 전송 어댑터를 이용해 어떠한 non-blocking IO도 지원하지 않습니다.
 :attr:`Response.content <requests.Response.content>` 아마 다운로드가 다될때 까지 막혀있습니다.
 만약 non-blocking 을 원한다면,스트림 형태의 라이브러리(:ref:`streaming-requests`)가 많은 시간을 절약해 줄수 있을 것입니다.
@@ -808,7 +822,6 @@ Requests는 기본적인 전송 어댑터를 이용해 어떠한 non-blocking IO
 
 .. _`grequests`: https://github.com/kennethreitz/grequests
 .. _`requests-futures`: https://github.com/ross/requests-futures
-
 .. _timeouts:
 
 Timeouts
