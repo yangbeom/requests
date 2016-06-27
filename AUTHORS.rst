@@ -8,8 +8,6 @@ Keepers of the Three Crystals
 - Cory Benfield <cory@lukasa.co.uk> `@lukasa <https://github.com/lukasa>`_
 - Ian Cordasco <graffatcolmingov@gmail.com> `@sigmavirus24 <https://github.com/sigmavirus24>`_
 
-
-
 Urllib3
 ```````
 
@@ -166,3 +164,4 @@ Patches and Suggestions
 - Dmitry Dygalo (`@Stranger6667 <https://github.com/Stranger6667>`_)
 - piotrjurkiewicz
 - Jesse Shapiro <jesse@jesseshapiro.net> (`@haikuginger <https://github.com/haikuginger>`_)
+- BeomSu, Yang <yangbeomsu@gmail.com> (`@yangbeom <https://github.com/yangbeom>`_)

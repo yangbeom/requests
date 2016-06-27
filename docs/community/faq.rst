@@ -3,30 +3,23 @@
 Frequently Asked Questions
 ==========================
 
-This part of the documentation answers common questions about Requests.
+Requests에 관한 자주 나오는 질문과 답을 모아놓았습니다.
 
 Encoded Data?
 -------------
 
-Requests automatically decompresses gzip-encoded responses, and does
-its best to decode response content to unicode when possible.
-
-You can get direct access to the raw response (and even the socket),
-if needed as well.
-
+Requests는 자동적으로 gzip으로 encode된 응답들을 해제 합니다.
+그리고 최적으로 unicode에 대한 컨텐츠를 decode된 응답으로 바꿔줍니다.
+만약 필요하다면 소켓을 포함한 raw 응답을 받을수도 있습니다.
 
 Custom User-Agents?
 -------------------
 
-Requests allows you to easily override User-Agent strings, along with
-any other HTTP Header.
-
+Requests는 User-Agent를 쉽게 변경할수 있습니다. 물론 어떠한 HTTP Header들도 마찬가지 입니다.
 
 Why not Httplib2?
 -----------------
-
-Chris Adams gave an excellent summary on
-`Hacker News <http://news.ycombinator.com/item?id=2884406>`_:
+Chris Adams 가 `Hacker News <http://news.ycombinator.com/item?id=2884406>`_ 에 요약해 두었습니다.
 
     httplib2 is part of why you should use requests: it's far more respectable
     as a client but not as well documented and it still takes way too much code
@@ -50,9 +43,7 @@ Chris Adams gave an excellent summary on
 
 Python 3 Support?
 -----------------
-
-Yes! Here's a list of Python platforms that are officially
-supported:
+물론입니다! 다음은 공식적으로 지원하는 Python 버전들입니다
 
 * Python 2.6
 * Python 2.7
@@ -66,22 +57,19 @@ supported:
 What are "hostname doesn't match" errors?
 -----------------------------------------
 
-These errors occur when :ref:`SSL certificate verification <verification>`
-fails to match the certificate the server responds with to the hostname
-Requests thinks it's contacting. If you're certain the server's SSL setup is
-correct (for example, because you can visit the site with your browser) and
-you're using Python 2.6 or 2.7, a possible explanation is that you need
-Server-Name-Indication.
+다음 에러들은 서버의 인증서와 Requests가 접속한 hostname이 일치하지 않는
+:ref:`SSL certificate verification <verification>` 실패에서 에서 일어납니다.
 
-`Server-Name-Indication`_, or SNI, is an official extension to SSL where the
-client tells the server what hostname it is contacting. This is important
-when servers are using `Virtual Hosting`_. When such servers are hosting
-more than one SSL site they need to be able to return the appropriate
-certificate based on the hostname the client is connecting to.
+만약 서버의 SSL 설정이 정확히 이루어졌으며,
+Python 2.6 혹은 Python 2.7을 이용하고 있다면 Server-Name-Indication 을 별도로 알려주어야 합니다.
 
-Python3 and Python 2.7.9+ include native support for SNI in their SSL modules.
-For information on using SNI with Requests on Python < 2.7.9 refer to this
-`Stack Overflow answer`_.
+`Server-Name-Indication`_, 혹은 SNI, 클라이언트가 호스트네임에 접속해서 서버를 부르는 공식적인 SSL 확장기능입니다.
+이것은 서버에서 `Virtual Hosting`_ 를 사용한다면 중요합니다.
+서버에서 하나 이상의 SSL사이트를 호스팅중일때 적절한 인증서를 클라이어트가
+접속한 hostname을 기반으로 반환할수 있도록 해야합니다.
+Python3 와 Python 2.7.9+ 에서는 SSL modules에서 SNI에 관한 기능을 지원하고 있습니다.
+Python 2.7.9 이전 버전에서 Requests를 사용할때 SNI를 이용하는 방법은  `Stack Overflow answer`_ 를 참고하시기 바랍니다.
+
 
 .. _`Server-Name-Indication`: https://en.wikipedia.org/wiki/Server_Name_Indication
 .. _`virtual hosting`: https://en.wikipedia.org/wiki/Virtual_hosting

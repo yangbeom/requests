@@ -1,98 +1,74 @@
 Vulnerability Disclosure
 ========================
+만약 Requests의 일반적인 파일 이슈가 아닌 보안취약점에 대해 발견했다면,
+`sigmavirus24 <mailto:graffatcolmingov@gmail.com>`_ 와 `Lukasa <mailto:cory@lukasa.co.uk>`_ 로 이메일을 보내주세요.
 
-If you think you have found a potential security vulnerability in requests,
-please email `sigmavirus24 <mailto:graffatcolmingov@gmail.com>`_ and
-`Lukasa <mailto:cory@lukasa.co.uk>`_ directly. **Do not file a public issue.**
-
-Our PGP Key fingerprints are:
+우리의 PGP 키는 다음과 같습니다.
 
 - 0161 BB7E B208 B5E0 4FDC  9F81 D9DA 0A04 9113 F853 (@sigmavirus24)
 
 - 90DC AE40 FEA7 4B14 9B70  662D F25F 2144 EEC1 373D (@lukasa)
 
-If English is not your first language, please try to describe the problem and
-its impact to the best of your ability. For greater detail, please use your
-native language and we will try our best to translate it using online services.
+만약 영어가 모국어가 아니라면, 문제를 묘사해주세요 그리고 이것에 대한 영향을 알려주세요.
+자세한 내용은, 모국어로 작성해주시면 우리가 온라인 서비스를 이용하여 번역에 최선을 다할것입니다.
+당신이 문제를 찾은 코드와 재사용할수 있게 짧은 코드를 첨부해주세요.
+그리고 누구에게도 이 이야기를 하지 말아주세요.
 
-Please also include the code you used to find the problem and the shortest
-amount of code necessary to reproduce it.
-
-Please do not disclose this to anyone else. We will retrieve a CVE identifier
-if necessary and give you full credit under whatever name or alias you provide.
-We will only request an identifier when we have a fix and can publish it in a
-release.
-
-We will respect your privacy and will only publicize your involvement if you
-grant us permission.
+만약 필요하다면 우리는 CVE식별자를 검색해올것입니다. 그리고 당신의 이름 혹은 별칭을 credit에 올릴것입니다.
+우리는 이 릴리즈안에 고칠수 있고 발행가능한 식별자를 원합니다.
+우리는 당신의 사생활을 존중합니다. 그리고 당신이 권한을 준다면 우리는 당신의 업적을 알릴것입니다.
 
 Process
 -------
-
-This following information discusses the process the requests project follows
-in response to vulnerability disclosures. If you are disclosing a
-vulnerability, this section of the documentation lets you know how we will
-respond to your disclosure.
+Requests 프로젝트를 사용하는 사용자의 취약점 제보로 이루어집니다.
+만약 당신이 어떤 취약점을 알리고싶다면, 문서의 이 섹션에서 당신이 우리에게 문제점을 보내는 방법을 알려줍니다.
 
 Timeline
 ~~~~~~~~
+이슈를 알려준다면, 프로젝트 멤버가 2일안에 답장을 해줄것입니다.
+대부분은 이보다 빠른 12시간 안에 이뤄질것입니다.
+이 초기 응답은 보낸 리포트에 의해 최소한으로 검증될것입니다.
+만약 우리가 이 이슈를 빨리 확인가능하다면, 초기응답은 이슈에 대한 확인이 포함되어 있을 것입니다.
+만약 그렇지 못한다면, 우리는 다시 이슈를 확인하기위한 시나리오에 대한 정보를 물어볼것입니다.
 
-When you report an issue, one of the project members will respond to you within
-two days *at the outside*. In most cases responses will be faster, usually
-within 12 hours. This initial response will at the very least confirm receipt
-of the report.
+우리의 어떠한 취약점이던 초기 제보를 받은후 2주안에 고치는것이 목표입니다.
+이것은 아마도 릴리즈와 릴리즈사이에 놓여있을수 있습니다. 고심해서 고치기전엔 단순히 함수를 사용하지 못하게 할수있습니다.
+그러나 가능한 빨리 완료할것입니다.
 
-If we were able to rapidly reproduce the issue, the initial response will also
-contain confirmation of the issue. If we are not, we will often ask for more
-information about the reproduction scenario.
+우리의 수정 프로세스는 당신이 잠자리에 들지 못할만큼 빠르게 진행될것입니다.
+그리고 우리가 고쳤다는것을 믿을수 있게 계속해서 알려줄것입니다.
+특히 만약 우리가 시연 시나리오를 확신할수 없다면 종종 우리는 당신에게 사용하는 환경에서 그 문제가 해결되었는지 물어볼것입니다.
 
-Our goal is to have a fix for any vulnerability released within two weeks of
-the initial disclosure. This may potentially involve shipping an interim
-release that simply disables function while a more mature fix can be prepared,
-but will in the vast majority of cases mean shipping a complete release as soon
-as possible.
+이것은, 우리가 릴리즈를 위한 준비입니다.
+이것이 필요하다고 생각한다면 우리는 신용할수 있는 곳을 통하여 CVE 번호를 얻을것입니다.
+우리는 또한 릴리즈 일을 계획할것입니다.
+이 릴리즈 데이트는 언제나 주중이 될것입니다.
 
-Throughout the fix process we will keep you up to speed with how the fix is
-progressing. Once the fix is prepared, we will notify you that we believe we
-have a fix. Often we will ask you to confirm the fix resolves the problem in
-your environment, especially if we are not confident of our reproduction
-scenario.
-
-At this point, we will prepare for the release. We will obtain a CVE number
-if one is required, providing you with full credit for the discovery. We will
-also decide on a planned release date, and let you know when it is. This
-release date will *always* be on a weekday.
-
-At this point we will reach out to our major downstream packagers to notify
-them of an impending security-related patch so they can make arrangements. In
-addition, these packagers will be provided with the intended patch ahead of
-time, to ensure that they are able to promptly release their downstream
-packages. Currently the list of people we actively contact *ahead of a public
-release* is:
+이러한 관점에서 우리는 우리의 메이저 다운스트림 패키저들에게 곧 닥칠 보안관련 패치에대해서 연락을 취할것입니다. 그럼 그들도 그에 대한 준비를 할수 있을것입니다.
+게다가, 이 패키저들은 해당 패치를 빠른 시일내에 제공할것입니다.
+다운스트림 패키지들에 대해서 즉각적으로 배포할것이라고 확신할수있습니다.
+최근에 사전 공개배포를 원하는 사람들의 리스트입니다.
 
 - Ralph Bean, Red Hat (@ralphbean)
 - Daniele Tricoli, Debian (@eriol)
 
-We will notify these individuals at least a week ahead of our planned release
-date to ensure that they have sufficient time to prepare. If you believe you
-should be on this list, please let one of the maintainers know at one of the
-email addresses at the top of this article.
+우리는 개별적으로 최소 한주전에 우리의 계획된 릴리즈 날짜를 확실하게 준비하기에 충분한 시간을 갖을수 있도록 알릴 것이다.
+만약 니가 리스트에 올라가야 한다고 생각한다면, 이 기사의 상단부분에 있는 메인테이너 이메일 주소 중 하나를 택해서 메일을 보내주세요
+릴리즈날에는, 우리의 공개된 레포지토리에 패치를 push할것입니다, 이와 마찬가지로 이슈에 대해서 설명한 changelog를 업데이트 할것입니다.
+우리는 PyPI 릴리즈에도 해당 이슈에 관한 패치를 진행할것입니다.
 
-On release day, we will push the patch to our public repository, along with an
-updated changelog that describes the issue and credits you. We will then issue
-a PyPI release containing the patch.
 
-At this point, we will publicise the release. This will involve mails to
-mailing lists, Tweets, and all other communication mechanisms available to the
-core team.
+이러한 관점에 따라서 우리는 릴리즈를 알릴것입니다.
+우리 코어팀은 메일링 리스트, 트윗등 모든 방법을 통해서 알릴것입니다.
 
 We will also explicitly mention which commits contain the fix to make it easier
 for other distributors and users to easily patch their own versions of requests
 if upgrading is not an option.
 
+ 다른 방법으로 쉽게 고칠 수 있게 그리고 유저들이 만약 업그레이드에 대한 옵션이 없다면 그들의 requests 버전을 쉽게 패치하는것을 위해
+ 우리는 또한 멘션을 남길것입니다.
 Previous CVEs
 -------------
-
 - Fixed in 2.6.0
 
   - `CVE 2015-2296 <http://www.cve.mitre.org/cgi-bin/cvename.cgi?name=2015-2296>`_,

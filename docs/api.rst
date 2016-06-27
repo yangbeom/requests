@@ -2,19 +2,16 @@
 
 Developer Interface
 ===================
-
 .. module:: requests
 
-This part of the documentation covers all the interfaces of Requests. For
-parts where Requests depends on external libraries, we document the most
-important right here and provide links to the canonical documentation.
-
+이곳은 Requests의 모든 인터페이스를 나타내고있습니다.
+Requests가 신뢰하는 주요 외부 라이브러리들을 위해 공식문서의 링크를 제공합니다.
 
 Main Interface
 --------------
 
-All of Requests' functionality can be accessed by these 7 methods.
-They all return an instance of the :class:`Response <Response>` object.
+모든 Requests 함수들은 다음 7가지 methods에 접근할 수 있습니다.
+:class:`Response <Response>` object 를 return 해줍니다.
 
 .. autofunction:: request
 
@@ -103,7 +100,6 @@ Cookies
 
 Status Code Lookup
 ------------------
-
 .. autoclass:: requests.codes
 
 ::
@@ -121,25 +117,22 @@ Status Code Lookup
 
 Migrating to 1.x
 ----------------
-
-This section details the main differences between 0.x and 1.x and is meant
-to ease the pain of upgrading.
+0.x버전과 1.x버전사이의 차이점을 설명하고 쉽게 개선하게 도와줄 것입니다.
 
 
 API Changes
 ~~~~~~~~~~~
 
-* ``Response.json`` is now a callable and not a property of a response.
-
+* ``Response.json`` 를 사용할수 있습니다. 이 ``Response.json``은 응답 속성이 아닙니다.
   ::
 
       import requests
       r = requests.get('https://github.com/timeline.json')
       r.json()   # This *call* raises an exception if JSON decoding fails
 
-* The ``Session`` API has changed. Sessions objects no longer take parameters.
-  ``Session`` is also now capitalized, but it can still be
-  instantiated with a lowercase ``session`` for backwards compatibility.
+* ``Session`` API가 변했습니다. Session objects는 더 이상 매개변수를 갖지 않습니다.
+  ``Session``은 또한 대문자로 사용합니다. 그러나 이전의 ``session``과 같은 역할을 합니다.
+
 
   ::
 
@@ -150,16 +143,17 @@ API Changes
 
 * All request hooks have been removed except 'response'.
 
-* Authentication helpers have been broken out into separate modules. See
-  requests-oauthlib_ and requests-kerberos_.
+* 모든 request hook들은 'response'의 예외에서 제거되었습니다.
+
+* Authentication helpers have been broken out into separate modules.
+
+* 인증을 도와주던 모듈인 requests-oauthlib_ 와 requests-kerberos_ 는 따로 분리되었습니다.
 
 .. _requests-oauthlib: https://github.com/requests/requests-oauthlib
 .. _requests-kerberos: https://github.com/requests/requests-kerberos
 
-* The parameter for streaming requests was changed from ``prefetch`` to
-  ``stream`` and the logic was inverted. In addition, ``stream`` is now
-  required for raw response reading.
-
+* 스트리밍 관련 환경변수가 ``prefetch``에서 ``stream``으로 변경되었으며 로직을 바꾸었습니다.
+  또한, ``stream``은 raw response 를 읽는데 요구됩니다.
   ::
 
       # in 0.x, passing prefetch=False would accomplish the same thing
@@ -167,11 +161,9 @@ API Changes
       for chunk in r.iter_content(8192):
           ...
 
-* The ``config`` parameter to the requests method has been removed. Some of
-  these options are now configured on a ``Session`` such as keep-alive and
-  maximum number of redirects. The verbosity option should be handled by
-  configuring logging.
-
+* ``config`` 변수는 requests method에서 제거되었습니다. keep-alive 나 최대 redirects와 같은 몇몇 옵션들은 ``Session``을
+  사용하시면 됩니다.
+  여러 옵션은 환경변수 로깅에 의해 제어됩니다.
   ::
 
       import requests
@@ -211,36 +203,27 @@ license ensures that contributions to Requests are also covered by the Apache
 Migrating to 2.x
 ----------------
 
-
-Compared with the 1.0 release, there were relatively few backwards
-incompatible changes, but there are still a few issues to be aware of with
-this major release.
-
-For more details on the changes in this release including new APIs, links
-to the relevant GitHub issues and some of the bug fixes, read Cory's blog_
-on the subject.
+비교적 몇가지 변경사항은 1.0버전과 완전히 다릅니다. 그러나 여전히 알고있는 몇가지의 이슈들이 이번릴리즈에 포함되어 있습니다.
+이번 릴리즈에 포함되어 있는 새로운 API들의 상세한 변경점은 Cory의 blog_ 에서 확인 할 수 있습니다.
+GitHub 이슈에서 새로운 API와 관련된 논의가 되고 있으며 몇 가지의 버그 픽스가 있었습니다.
 
 .. _blog: http://lukasa.co.uk/2013/09/Requests_20/
 
 
 API Changes
 ~~~~~~~~~~~
-
-* There were a couple changes to how Requests handles exceptions.
-  ``RequestException`` is now a subclass of ``IOError`` rather than
-  ``RuntimeError`` as that more accurately categorizes the type of error.
-  In addition, an invalid URL escape sequence now raises a subclass of
-  ``RequestException`` rather than a ``ValueError``.
+* 다음은 Requests의 예외를 처리하는 방법에 대해 두가지의 변경이 있습니다.
+  ``RequestException``은 더 이상 error 타입의 정확하고 세분화시키기 위하여
+  ``RuntimeError``가 아닌 ``IOError``를 subclass로 갖고 있습니다.
+  또한 인식 불가능한 URL escape sequence에 대해서는 ``ValueError``이 아닌 ``RequestException``가 출력됩니다.
 
   ::
 
       requests.get('http://%zz/')   # raises requests.exceptions.InvalidURL
 
-  Lastly, ``httplib.IncompleteRead`` exceptions caused by incorrect chunked
-  encoding will now raise a Requests ``ChunkedEncodingError`` instead.
+  마지막으로, 정확하지 않은 encoding으로 발생되던 ``httplib.IncompleteRead`` 예외는 ``ChukedEncodingError``가 대신 발생합니다.
 
-* The proxy API has changed slightly. The scheme for a proxy URL is now
-  required.
+* proxy API는 약간 변경 되었습니다. proxy URL을 위한 scheme이 요구됩니다.
 
   ::
 
@@ -254,10 +237,8 @@ API Changes
 
 
 Behavioural Changes
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
-* Keys in the ``headers`` dictionary are now native strings on all Python
-  versions, i.e. bytestrings on Python 2 and unicode on Python 3. If the
-  keys are not native strings (unicode on Python2 or bytestrings on Python 3)
-  they will be converted to the native string type assuming UTF-8 encoding.
-
+* ``headers``의 dictionary키는 이제 모든 Python 버전에서 기본 스트링으로 적용됩니다.
+  예를 들면 Python 2에서는 bytestring으로 Python 3에서는 unicode로 적용이됩니다.
+  만약 key들을 기본 문자열로 사용하지 않는다면 UTF-8 인코딩을 기본으로 변환하게 됩니다.

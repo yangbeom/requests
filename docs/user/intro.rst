@@ -2,12 +2,10 @@
 
 Introduction
 ============
-
 Philosophy
 ----------
 
-Requests was developed with a few :pep:`20` idioms in mind.
-
+Requests는 개발하는데 :pep:`20` 의 몇 가지 관용구를 따르고 있습니다.
 
 #. Beautiful is better than ugly.
 #. Explicit is better than implicit.
@@ -15,7 +13,7 @@ Requests was developed with a few :pep:`20` idioms in mind.
 #. Complex is better than complicated.
 #. Readability counts.
 
-All contributions to Requests should keep these important rules in mind.
+모든 Requests의 기여자는 위의 룰을 마음속에 간직하세요.
 
 .. _`apache2`:
 

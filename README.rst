@@ -4,14 +4,15 @@ Requests: HTTP for Humans
 .. image:: https://img.shields.io/pypi/v/requests.svg
     :target: https://pypi.python.org/pypi/requests
 
-Requests is the only *Non-GMO* HTTP library for Python, safe for human
-consumption.
+.. image:: https://img.shields.io/pypi/dm/requests.svg
+        :target: https://pypi.python.org/pypi/requests
 
-**Warning:** Recreational use of other HTTP libraries may result in dangerous side-effects,
-including: security vulnerabilities, verbose code, reinventing the wheel,
-constantly reading documentation, depression, headaches, or even death.
+Requests 는 사람이 이해하기 쉬운 순수한? HTTP library입니다.
+**경고:** Recreational 다른 HTTP라이브러리의 사용은 다음과 같은 위험성을 내포할수 있습니다.
+보안 취약점, 장황한 코드, 쓸데없는 시간낭비,
+끊임없는 문서를 읽기, 짜증, 두통, 심지어 죽음까지 포함되어 있을 수 있습니다.
 
-Behold, the power of Requests:
+다음은 만능 Requests 사용법입니다.
 
 .. code-block:: python
 
@@ -27,67 +28,65 @@ Behold, the power of Requests:
     >>> r.json()
     {u'disk_usage': 368627, u'private_gists': 484, ...}
 
-See `the similar code, sans Requests <https://gist.github.com/973705>`_.
+Requests를 사용하지 않은 유사코드는 `여기 <https://gist.github.com/973705>`_서 보실 수 있습니다.
 
-Requests allows you to send *organic, grass-fed* HTTP/1.1 requests, without the
-need for manual labor. There's no need to manually add query strings to your
-URLs, or to form-encode your POST data. Keep-alive and HTTP connection pooling
-are 100% automatic, powered by `urllib3 <https://github.com/shazow/urllib3>`_,
-which is embedded within Requests.
+Requests는 당신이 손쉽게 거대한 파일을 HTTP/1.1 requests로 보내는것을 가능케 해줍니다.
+당신이 원하는 url에 쿼리를 추가하거나 form-encode된 POST 데이터를 수동으로 추가할 필요가 없습니다.
+Requests를 이용하여 HTTP connection pooling 을 자동으로 유지할수있습니다.
+HTTP connection pooling과 Keep-alive는 Requests가 urllib3를 이용하여 100% 자동으로 이루어집니다.
 
-Besides, all the cool kids are doing it. Requests is one of the most
-downloaded Python packages of all time, pulling in over 7,000,000 downloads
-every month. You don't want to be left out!
+게다가 어린 아이들도 쉽게 사용할 수 있습니다. Requets는 Python 패키지중 가장 많은 다운로드를 갖고 있으며,
+매달 700만건 이상 다운로드 하고있습니다. 이용해보고 나면 아마 당신은 Requests를 계속해서 이용할 것입니다.
 
 Feature Support
 ---------------
 
-Requests is ready for today's web.
+Requests는 최신 web에 대한 준비가 되어 있습니다.
 
-- International Domains and URLs
-- Keep-Alive & Connection Pooling
-- Sessions with Cookie Persistence
-- Browser-style SSL Verification
-- Basic/Digest Authentication
-- Elegant Key/Value Cookies
-- Automatic Decompression
-- Automatic Content Decoding
-- Unicode Response Bodies
-- Multipart File Uploads
-- HTTP(S) Proxy Support
-- Connection Timeouts
-- Streaming Downloads
-- ``.netrc`` Support
-- Chunked Requests
-- Thread-safety
+-- 국제적 도메인과 URLs
+-- Keep-Alive & Connection Pooling
+-- 세션과 쿠키
+-- 브라우저와 같은 SSL을 이용한 연결
+-- 기존/경량화된 인증
+-- 우아한 Key/Value 쿠키
+-- 자동 압축해제
+-- 컨텐츠 자동 디코딩
+-- Respone 바디의 유니코드화
+-- Multipart 파일 업로드
+-- HTTP(S) Proxy 지원
+-- Connection Timeouts
+-- 스트리밍 다운로드
+-- ``.netrc`` 지원
+-- 파편화된 Requests
+-- 스레드 안정성
 
-Requests supports Python 2.6 — 3.5, and runs great on PyPy.
+Requests는 Python 2.6 — 3.5, 그리고 PyPy를 지원합니다.
 
 Installation
 ------------
 
-To install Requests, simply:
+Requests의 설치는 다음과 같습니다.
 
 .. code-block:: bash
 
     $ pip install requests
     ✨🍰✨
 
-Satisfaction, guaranteed.
-
+확실히 만족할 것입니다.
 Documentation
 -------------
 
 Fantastic documentation is available at http://docs.python-requests.org/, for a limited time only.
-
+환상적인 문서는 http://docs.python-requests.org/ 에서 볼 수 있습니다.
 
 How to Contribute
 -----------------
 
-#. Check for open issues or open a fresh issue to start a discussion around a feature idea or a bug. There is a `Contributor Friendly`_ tag for issues that should be ideal for people who are not very familiar with the codebase yet.
-#. Fork `the repository`_ on GitHub to start making your changes to the **master** branch (or branch off of it).
-#. Write a test which shows that the bug was fixed or that the feature works as expected.
-#. Send a pull request and bug the maintainer until it gets merged and published. :) Make sure to add yourself to AUTHORS_.
+#. 이미 오픈된 이슈 혹은 새로 시작된 이슈에서 새로운 아이디어나 버그에 대해 토론하세요.
+`Contributor Friendly`_ 태그는 아직 코드가 익숙하지 않은 사용자들을 위한 이슈입니다.
+#. GitHub의 `the repository`_를 Fork하고 **master** 브랜치에 수정을 하세요.
+#. 테스트를 작성하고 버그를 고쳤다는 것을 보여주시거나 이를 이용해 기대되는것을 보여주세요.
+#. 풀리퀘스트와 버그를 보내주세요 메인테이너가 합치고 발행할것입니다. 그리고 스스로 AUTHORS_ 에 자신을 추가하세요.
 
 .. _`the repository`: http://github.com/kennethreitz/requests
 .. _AUTHORS: https://github.com/kennethreitz/requests/blob/master/AUTHORS.rst

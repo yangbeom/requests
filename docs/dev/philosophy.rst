@@ -1,41 +1,49 @@
 Development Philosophy
 ======================
-
-Requests is an open but opinionated library, created by an open but opinionated developer.
-
+Requests는 오픈되어 있으나 독선적인 라이브러리이며 제작에 오픈되어있으나 자기뜻을 고집하는 개발자입니다.
 
 Management Style
 ~~~~~~~~~~~~~~~~
+`Kenneth Reitz <http://kennethreitz.org>`_ 는 BDFL입니다.
+그는 모든 Requests 프로젝트에 관한 최종 발언권을 갖고있습니다.
+Kenneth는 라이브러리의 방향과 형태를 책임지고 있습니다.
+게다가 뛰어난 기술을 바탕으로 판단을 내립니다.
+그는 Requests의 개념철학을 바탕으로 결정을 내리는것을 책임지고있습니다.
+Kenneth만이 Requests에 코드를 merge할 수 있습니다.
 
-`Kenneth Reitz <http://kennethreitz.org>`_ is the BDFL. He has final say in any decision related to the Requests project. Kenneth is responsible for the direction and form of the library. In addition to making decisions based on technical merit, he is responsible for making decisions based on the development philosophy of Requests. Only Kenneth may merge code into Requests.
-
-`Ian Cordasco <http://www.coglib.com/~icordasc/>`_ and `Cory Benfield <https://lukasa.co.uk/about/>`_ are the core contributors. They are responsible for triaging bug reports, reviewing pull requests and ensuring that Kenneth is kept up to speed with developments around the library. The day-to-day managing of the project is done by the core contributors. They are responsible for making judgements about whether or not a feature request is likely to be accepted by Kenneth. They do not have the authority to change code or merge code changes, though they may change documentation. Their word is not final.
-
+`Ian Cordasco <http://www.coglib.com/~icordasc/>`_ 과 `Cory Benfield <https://lukasa.co.uk/about/>`_ 는 핵심 컨트리뷰터입니다.
+그들은 버그리포트의 우선순위를 책임지고있습니다.
+라이브러리 전반적으로 Kenneth가 개발속도를 유지할수 있도록 pull 리퀘스트들과 확인작업을 합니다.
+핵심 컨트리뷰터가 매일 프로젝트를 끝낼수 있도록 관리합니다.
+그들은 Kenneth가 수용할지 말지에 대한 판단을 맡고있습니다.
+그들은 코드변경과 변경된 코드 merge에 관한 권한은 없지만 문서를 변경할수 있습니다.
+그들의 이야기는 끝이아닙니다.
 Values
 ~~~~~~
 
-- Simplicity is always better than functionality.
-- Listen to everyone, then disregard it.
-- The API is all that matters. Everything else is secondary.
-- Fit the 90% use-case. Ignore the nay-sayers.
+- 심플함은 언제나 기능성보다 좋다.
+- 모든것을 들어본 이후에 묵살하라.
+- API는 모두 문제가있다. 모든것에는 차선책이있다.
+- 90%의 use-case에 맞춰라 비관론자를 무시하라
 
 Semantic Versioning
 ~~~~~~~~~~~~~~~~~~~
 
-For many years, the open source community has been plagued with version number dystonia. Numbers vary so greatly from project to project, they are practically meaningless.
-
-Requests uses `Semantic Versioning <http://semver.org>`_. This specification seeks to put an end to this madness with a small set of practical guidelines for you and your colleagues to use in your next project.
+여러해동안, 오픈소스 커뮤니티에서 버전에 대한 전염병을 겪었습니다.
+숫자는 프로젝트 시작부터 끝까지 매우 중요합니다. 그것들은 사실상 의미를 잃었습니다.
+Requests는 `Semantic Versioning <http://semver.org>`_ 을 이용합니다.
+이것은 상세하게 찾을수있습니다. 여러분들이 다음 프로젝트에 사용할수 있도록 작은 가이드라인에 담겨있습니다.
 
 Standard Library?
 ~~~~~~~~~~~~~~~~~
 
-Requests has no *active* plans to be included in the standard library. This decision has been discussed at length with Guido as well as numerous core developers.
-
-Essentially, the standard library is where a library goes to die. It is appropriate for a module to be included when active development is no longer necessary.
+Requests는 표준라이브러리에 포함시키려는 적극적인 계획을 갖고있지 않습니다.
+이러한 결정은 Guido와 코어 개발자들이 문제를 충분히 의논한 결과입니다.
+근본적으로, 표준라이브러리가 된다고 라이브러리가 죽지는않습니다.
+이것은 표준 라이브러리에 포함되기 위해서 하는 모듈의 활발한 개발은 필요치 않습니다.
 
 Linux Distro Packages
 ~~~~~~~~~~~~~~~~~~~~~
 
-Distributions have been made for many Linux repositories, including: Ubuntu, Debian, RHEL, and Arch.
-
-These distributions are sometimes divergent forks, or are otherwise not kept up-to-date with the latest code and bugfixes. PyPI (and its mirrors) and GitHub are the official distribution sources; alternatives are not supported by the Requests project.
+배포를 위해 Ubuntu, Debian, RHEL, 그리고 Arch를 포함한 많은 리눅스 레포지토리를 만들었습니다.
+이 배포는 가끔 포크와 갈라지기도하고 최신의 코드와 bugfix를 포함하지 않을수도 있습니다.
