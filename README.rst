@@ -8,9 +8,9 @@ Requests: HTTP for Humans
         :target: https://pypi.python.org/pypi/requests
 
 Requests 는 사람이 이해하기 쉬운 순수한? HTTP library입니다.
+
 **경고:** Recreational 다른 HTTP라이브러리의 사용은 다음과 같은 위험성을 내포할수 있습니다.
-보안 취약점, 장황한 코드, 쓸데없는 시간낭비,
-끊임없는 문서를 읽기, 짜증, 두통, 심지어 죽음까지 포함되어 있을 수 있습니다.
+보안 취약점, 장황한 코드, 쓸데없는 시간낭비, 끊임없는 문서를 읽기, 짜증, 두통, 심지어 죽음까지 포함되어 있을 수 있습니다.
 
 다음은 만능 Requests 사용법입니다.
 
