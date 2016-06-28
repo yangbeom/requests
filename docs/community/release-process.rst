@@ -3,7 +3,7 @@ Release Process and Rules
 
 .. versionadded:: v2.6.2
 
-``v2.6.2``이후의 버전부터 시작되었습니다.
+``v2.6.2`` 이후의 버전부터 시작되었습니다.
 Requests core team 이 새로운 릴리즈를 룰에 따라 만들게 됩니다.
 
 Major Releases
