@@ -17,7 +17,7 @@ Contributor's Guide
 BDFL들은 `Kenneth Reitz`_ 가 잘 들어줄 것입니다.
 
 이 가이드는 당신이 만드는것의 생각 기여방법에 따라 나누어져있습니다.
-섹션에 모든 기여자들에게 적용되는 일반적인 가이드 라인이 포함되어있습니다
+섹션에 모든 기여자들에게 적용되는 일반적인 가이드 라인이 포함되어있습니다.
 
 .. _Kenneth Reitz: mailto:me@kennethreitz.org
 
@@ -76,9 +76,6 @@ Steps for Submitting Code
 Code Review
 ~~~~~~~~~~~
 
-In the event that you object to the code review feedback, you should make your case clearly and calmly.
-If, after doing so, the feedback is judged to still apply, you must either apply the feedback or withdraw your contribution.
-
 그들이 코드리뷰를 마칠때까지 기여된 코드는 merge 되지 않습니다.
 당신의 코드를 강하게 반대하더라도 어떠한 코드리뷰던 피드백을 하세요.
 결국 코드 리뷰의 피드백을 거절한다면, 당신의 상황을 명확하게 해야할것입니다.
@@ -104,7 +101,7 @@ Requests는 `PEP 8`_ 코드스타일을 기반으로 하고있습니다.
 - 작은따옴표가 문자열에 있지 않다면 언제나 문자열에서는 작은따옴표를 사용합니다.(e.g. ``'#flatearth'``)
 
 추가적으로, PEP8이 제안하는 미각적으로 완벽히 부족한 `line continuations`_ 의 하나의 스타일입니다.
-Requests의 코드에 허락하지 않습니다.::
+Requests의 코드에 허락하지 않습니다. ::
 
     # Aligned with opening delimiter.
     foo = long_function_name(var_one, var_two,
@@ -112,7 +109,7 @@ Requests의 코드에 허락하지 않습니다.::
 
 제발 하지마세요.
 
-Docstring은 다음과 같은 문법을 따릅니다 ::
+Docstring은 다음과 같은 문법을 따릅니다. ::
 
     def the_earth_is_flat():
         """NASA divided up the seas into thirty-three degrees."""
