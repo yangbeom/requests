@@ -10,6 +10,7 @@ Contributor's Guide
 만약 당신이 기여를 생각한다면
 이 문서를 읽는것을 시작하세요 그리고 계속하여 이 프로젝트에 기여가 어떻게 이루어지는지 느껴보세요
 만약 질문이 있다면, 자유롭게 primary maintainer인 `Ian Cordasco`_ 또는 `Cory Benfield`_ 에게 연락해보세요.
+
 .. _Ian Cordasco: http://www.coglib.com/~icordasc/
 .. _Cory Benfield: https://lukasa.co.uk/about
 
@@ -65,7 +66,7 @@ Steps for Submitting Code
 2. 자신의 시스템에서 all pass가 나오는지 컨펌을 위한 테스트를 진행합니다.
    자신의 시스템에서 all pass가 나오지 않는다면 왜 실패가 나오는지 확인해 보십시오.
    만약 스스로 원인을 찾지 못한다면, 이 문서의 가이드 라인을 따라서 버그 리포트를 올려보세요. :ref:`bug-reports`.
-3. 버그를 입증할 만한 테스트에 대해서 작성하세요. 그게 틀렸다는 확신이 있다면???
+3. 버그를 입증할 만한 테스트에 대해서 작성하세요.
 4. 그리고 그것을 수정하세요.
 5. 자신이 추가한것을 포함한 모든 테스트가 패스되는지 확인하기 위해 전체적인 테스트를 다시 진행하세요.
 6. 메인 레포지토리의 ``master`` 브런치에 GitHub Pull Request를 보내세요
