@@ -64,12 +64,9 @@ Timeline
 이러한 관점에 따라서 우리는 릴리즈를 알릴것입니다.
 우리 코어팀은 메일링 리스트, 트윗등 모든 방법을 통해서 알릴것입니다.
 
-We will also explicitly mention which commits contain the fix to make it easier
-for other distributors and users to easily patch their own versions of requests
-if upgrading is not an option.
 
- 다른 방법으로 쉽게 고칠 수 있게 그리고 유저들이 만약 업그레이드에 대한 옵션이 없다면 그들의 requests 버전을 쉽게 패치하는것을 위해
- 우리는 또한 멘션을 남길것입니다.
+다른 방법으로 쉽게 고칠 수 있게 그리고 유저들이 만약 업그레이드에 대한 옵션이 없다면 그들의 requests 버전을 쉽게 패치하는것을 위해
+우리는 또한 멘션을 남길것입니다.
 
 Previous CVEs
 -------------
