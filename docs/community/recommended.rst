@@ -26,7 +26,7 @@ Requests-Toolbelt
 -----------------
 
 `Requests-Toolbelt`_ 는 몇 유저들의 Requests에 원하는 기능들을 모아 놓은 유틸리티의 집합입니다.
-그러나 Requests에 포함하기엔 적합하지는 않는 기능입니다.??
+그러나 Requests에 포함하기엔 적합하지는 않는 기능입니다.
 이 라이브러리엔 Requests의 핵심멤버들이 많이 포함되어있습니다. 그리고 유저들이 원하는 기능을 반영시킵니다.
 
 .. _Requests-Toolbelt: http://toolbelt.readthedocs.io/en/latest/index.html
