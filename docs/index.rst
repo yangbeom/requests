@@ -28,7 +28,7 @@ Requests 는 사람이 이해하기 쉬운 순수한 HTTP library입니다.
     {u'private_gists': 419, u'total_private_repos': 77, ...}
 
 
-Requests를 사용하지 않은 유사코드는 `여기 <https://gist.github.com/973705>`_서 보실 수 있습니다.
+Requests를 사용하지 않은 유사코드는 `여기 <https://gist.github.com/973705>`_ 에서 보실 수 있습니다.
 
 Requests는 당신이 손쉽게 거대한 파일을 HTTP/1.1 requests로 보내는것을 가능케 해줍니다.
 당신이 원하는 url에 쿼리를 추가하거나 form-encode된 POST 데이터를 수동으로 추가할 필요가 없습니다.
