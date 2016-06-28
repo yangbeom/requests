@@ -13,7 +13,7 @@ Basic Authentication
 많은 웹서비스들이 HTTP 기본 인증을 요구합니다.
 이것은 가장 간단한 종류입니다, 그리고 Requests는 독창적인 방법으로 지원합니다.
 
-HTTP 기본 인증을 필요로하는 리퀘스트를 만드는것은 매우 간단합니다::
+HTTP 기본 인증을 필요로하는 리퀘스트를 만드는것은 매우 간단합니다. ::
 
     >>> from requests.auth import HTTPBasicAuth
     >>> requests.get('https://api.github.com/user', auth=HTTPBasicAuth('user', 'pass'))
@@ -24,15 +24,14 @@ HTTP 기본 인증을 필요로하는 리퀘스트를 만드는것은 매우 간
     >>> requests.get('https://api.github.com/user', auth=('user', 'pass'))
     <Response [200]>
 
-
-auth파라메터에 튜플로 넣는 것은 위의 예제와 같이 ``HTTPBasicAuth``로 인증하는것과 같습니다.
+auth파라메터에 튜플로 넣는 것은 위의 예제와 같이 ``HTTPBasicAuth`` 로 인증하는것과 같습니다.
 
 
 netrc Authentication
 ~~~~~~~~~~~~~~~~~~~~
 
-만약 인증 메소드가 없고 ``auth``인자가 주어진, Requests는 URL의 hostname 에 인증을 위한 user's netrc 파일으로부터 시도할것입니다.
-netrc 파일은 HTTP 인증 헤더를 무시합니다?
+만약 인증 메소드가 없고 ``auth`` 인자가 주어진, Requests는 URL의 hostname 에 인증을 위한 user's netrc 파일으로부터 시도할것입니다.
+netrc 파일은 HTTP 인증 헤더를 무시합니다.
 
 만약 제어를 위한 호스트네임을 찾는다면, 그 리퀘스트는 HTTP Basic Auth를 포함하여 전송될것입니다.
 
@@ -54,7 +53,7 @@ OAuth 1 Authentication
 ----------------------
 
 OAuth는 여러 web API들을 이용하기 위한 흔한 인증폼입니다.
-``requests-oauthlib`` 라이브러리는 Requests 유자가 쉽게 OAuth 인증 리퀘스트 만드는것을 도와줍니다::
+``requests-oauthlib`` 라이브러리는 Requests 유자가 쉽게 OAuth 인증 리퀘스트 만드는것을 도와줍니다. ::
 
     >>> import requests
     >>> from requests_oauthlib import OAuth1
