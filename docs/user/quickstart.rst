@@ -35,13 +35,13 @@ Requests를 이용하여 리퀘스트를 만드는것은 매우 간단합니다.
 
 Requests의 간단한 API는 각각의 HTTP 리퀘스트 폼을 의미합니다.
 
-예를 들어 HTTP의 POST 리퀘스트를 만드는 방법입니다.::
+예를 들어 HTTP의 POST 리퀘스트를 만드는 방법입니다. ::
 
     >>> r = requests.post('http://httpbin.org/post', data = {'key':'value'})
 
 쉽죠? 다른 HTTP 리퀘스트인 PUT, DELETE,HEAD 그리고 OPTIONS는 어떨까요?
 
-예제를 보시죠 ::
+예제를 보시죠. ::
 
     >>> r = requests.put('http://httpbin.org/put', data = {'key':'value'})
     >>> r = requests.delete('http://httpbin.org/delete')
@@ -57,8 +57,7 @@ Passing Parameters In URLs
 만약 구성된 URL을 다룰줄 안다면, URL 뒤 물음표에 키와 값을 넣어 전송하는 방법을 알것입니다. e.g. ``httpbin.org/get?key=val``.
 
 Requests는 당신이 인자값을 ``params`` 키워드를 이용하여 dictionary로 보내는 것이 가능합니다.
-예를 들어 당신이 ``key1=value1`` 와 ``key2=value2`` 를 ``httpbin.org/get`` 에 보내고 싶다면 아래 코드와 같이 작성하면 됩니다.
-::
+예를 들어 당신이 ``key1=value1`` 와 ``key2=value2`` 를 ``httpbin.org/get`` 에 보내고 싶다면 아래 코드와 같이 작성하면 됩니다. ::
 
     >>> payload = {'key1': 'value1', 'key2': 'value2'}
     >>> r = requests.get('http://httpbin.org/get', params=payload)
@@ -82,7 +81,7 @@ Response Content
 ----------------
 
 서버가 보내온 응답의 컨텐츠를 읽을 수 있습니다.
-여기 다시한번 GitHub timeline을 봅시다.::
+여기 다시한번 GitHub timeline을 봅시다. ::
 
     >>> import requests
 
@@ -95,7 +94,7 @@ Requests는 서버에서 온 컨텐츠를 자동으로 decode 합니다.
 
 리퀘스트를 만들었을때, Requests는 응답의 HTTP 헤더를 기반으로 encode을 알아냅니다
 ``r.text`` 를 사용할 때 Requests를 통해 알아낸 인코딩을 합니다.
-당신은 ``r.encoding`` 을 통해 Requests에서 무엇으로 encoding 했는지 찾을수 있고 바꿀수도 있습니다.::
+당신은 ``r.encoding`` 을 통해 Requests에서 무엇으로 encoding 했는지 찾을수 있고 바꿀수도 있습니다. ::
 
     >>> r.encoding
     'utf-8'
@@ -114,14 +113,14 @@ Requests는 필요하다면 커스텀 encoding을 이용할 수 있습니다.
 Binary Response Content
 -----------------------
 
-non-text 응답을 받을때 바디의 byte에 접근이 가능합니다.::
+non-text 응답을 받을때 바디의 byte에 접근이 가능합니다. ::
 
     >>> r.content
     b'[{"repository":{"open_issues":0,"url":"https://github.com/...
 
 ``gzip`` 이나 ``deflate`` 와같은 전송인코딩을 자동적으로 디코드해줍니다.
 
-다음은 응답에서 받은 바이너리 데이터에서 이미지를 만드는 예제입니다.::
+다음은 응답에서 받은 바이너리 데이터에서 이미지를 만드는 예제입니다. ::
 
     >>> from PIL import Image
     >>> from StringIO import StringIO
@@ -132,7 +131,7 @@ non-text 응답을 받을때 바디의 byte에 접근이 가능합니다.::
 JSON Response Content
 ---------------------
 
-JSON 디코더도 포함되어 있어 JSON 데이터를 처리 할 수 있습니다.::
+JSON 디코더도 포함되어 있어 JSON 데이터를 처리 할 수 있습니다. ::
 
     >>> import requests
 
@@ -154,7 +153,7 @@ Raw Response Content
 
 드문 경우로 서버에서 raw socket 응답을 받을수 있습니다. 이때 ``r.raw`` 로 접근할 수 있습니다.
 
-raw socket 응답을 받길 원한다면 ,리퀘스트를 보낼때 ``stream=True`` 를 설정하세요. 한번 해보면 쉽게 할수 있습니다.::
+raw socket 응답을 받길 원한다면 ,리퀘스트를 보낼때 ``stream=True`` 를 설정하세요. 한번 해보면 쉽게 할수 있습니다. ::
 
     >>> r = requests.get('https://api.github.com/events', stream=True)
 
@@ -164,7 +163,7 @@ raw socket 응답을 받길 원한다면 ,리퀘스트를 보낼때 ``stream=Tru
     >>> r.raw.read(10)
     '\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03'
 
-일반적으로, 스트림파일을 다음과 같은 방법으로 저장할 수 있습니다 ::
+일반적으로, 스트림파일을 다음과 같은 방법으로 저장할 수 있습니다. ::
 
     with open(filename, 'wb') as fd:
         for chunk in r.iter_content(chunk_size):
@@ -178,7 +177,7 @@ Custom Headers
 
 만약 리퀘스트에 HTTP 헤더를 추가하고싶다면, 간단하게 ``dict`` 로 작성하여 ``headers`` 파라메터를 이용하시면 됩니다.
 
-예를 들어, 우리는 이전 예제에서 우리의 user-agent를 명시하기 싫다면 다음과 같이 변경할수 있습니다.::
+예를 들어, 우리는 이전 예제에서 우리의 user-agent를 명시하기 싫다면 다음과 같이 변경할수 있습니다. ::
 
     >>> url = 'https://api.github.com/some/endpoint'
     >>> headers = {'user-agent': 'my-app/0.0.1'}
@@ -203,7 +202,7 @@ More complicated POST requests
 
 일반적으로, 당신은 HTML폼과 같은 폼에 encoded 데이터를 보내고 싶어 할껍니다.
 이것을 위해, dictionary로 ``data`` 인자에 넣을 수 있습니다.
-리퀘스트를 만들때 데이터를 적은 dictionary 들은 자동적으로 폼에 맞게 수정될 것입니다.::
+리퀘스트를 만들때 데이터를 적은 dictionary 들은 자동적으로 폼에 맞게 수정될 것입니다. ::
 
     >>> payload = {'key1': 'value1', 'key2': 'value2'}
 
@@ -221,7 +220,7 @@ More complicated POST requests
 form-encoded 가아닌 데이터를 보내고 싶을 수 있습니다.
 만약 ``dict`` 대신 ``string`` 을 넣고싶다면, 다음과 같이 넣을 수 있습니다.
 
-예를들어, GitHub API v3는 POST/PATCH로 JSON 형식을 이용해 데이터를 전송하는것을 허락합니다.::
+예를들어, GitHub API v3는 POST/PATCH로 JSON 형식을 이용해 데이터를 전송하는것을 허락합니다. ::
 
     >>> import json
 
@@ -230,7 +229,7 @@ form-encoded 가아닌 데이터를 보내고 싶을 수 있습니다.
 
     >>> r = requests.post(url, data=json.dumps(payload))
 
-``dict`` 로 인코딩하는 대신 2.4.2버전 이상에서는 바로 ``json`` 파라메터를 이용하여 직접 넣을 수있습니다.::
+``dict`` 로 인코딩하는 대신 2.4.2버전 이상에서는 바로 ``json`` 파라메터를 이용하여 직접 넣을 수있습니다. ::
 
     >>> url = 'https://api.github.com/some/endpoint'
     >>> payload = {'some': 'data'}
@@ -240,7 +239,7 @@ form-encoded 가아닌 데이터를 보내고 싶을 수 있습니다.
 POST a Multipart-Encoded File
 -----------------------------
 
-Requests는 쉽게 Multipart-encoded 파일을 올릴 수 있습니다 ::
+Requests는 쉽게 Multipart-encoded 파일을 올릴 수 있습니다. ::
 
     >>> url = 'http://httpbin.org/post'
     >>> files = {'file': open('report.xls', 'rb')}
@@ -255,7 +254,7 @@ Requests는 쉽게 Multipart-encoded 파일을 올릴 수 있습니다 ::
       ...
     }
 
-파일 이름과 컨텐츠 타입을 설정하고 헤더에 추가하면 됩니다::
+파일 이름과 컨텐츠 타입을 설정하고 헤더에 추가하면 됩니다. ::
 
     >>> url = 'http://httpbin.org/post'
     >>> files = {'file': ('report.xls', open('report.xls', 'rb'), 'application/vnd.ms-excel', {'Expires': '0'})}
@@ -270,7 +269,7 @@ Requests는 쉽게 Multipart-encoded 파일을 올릴 수 있습니다 ::
       ...
     }
 
-만약 파일과 설명하는 문자열을 보내고싶다면::
+만약 파일과 설명하는 문자열을 보내고싶다면 ::
 
     >>> url = 'http://httpbin.org/post'
     >>> files = {'file': ('report.csv', 'some,data,to,send\nanother,row,to,send\n')}
@@ -308,13 +307,13 @@ Response Status Codes
     >>> r.status_code
     200
 
-또한 Requests는 상태코드를 포함하고 있어 다음과 같이 쉽게 비교할 수 있습니다.::
+또한 Requests는 상태코드를 포함하고 있어 다음과 같이 쉽게 비교할 수 있습니다. ::
 
     >>> r.status_code == requests.codes.ok
     True
 
 만약 4XX 클라이언트 에러나 5XX 서버 에러와 같은 응답을 받는다면,
-:meth:`Response.raise_for_status() <requests.Response.raise_for_status>` 가 일어날 것입니다.::
+:meth:`Response.raise_for_status() <requests.Response.raise_for_status>` 가 일어날 것입니다. ::
 
 
     >>> bad_r = requests.get('http://httpbin.org/status/404')
@@ -327,7 +326,7 @@ Response Status Codes
         raise http_error
     requests.exceptions.HTTPError: 404 Client Error
 
-그러나 ``raise_for_status()`` 를 사용하여 ``r`` 의 ``status_code`` 가 ``200`` 임을 알수 있습니다.::
+그러나 ``raise_for_status()`` 를 사용하여 ``r`` 의 ``status_code`` 가 ``200`` 임을 알수 있습니다. ::
 
     >>> r.raise_for_status()
     None
@@ -335,7 +334,7 @@ Response Status Codes
 Response Headers
 ----------------
 
-우리는 서버의 응답 해더를 Python dictionary로 볼수 있습니다  ::
+우리는 서버의 응답 해더를 Python dictionary로 볼수 있습니다. ::
 
     >>> r.headers
     {
@@ -350,7 +349,7 @@ Response Headers
 
 HTTP 헤더를 만들때 dictionary는 특별합니다.
 `RFC 7230 <http://tools.ietf.org/html/rfc7230#section-3.2>`_,에 따르면 HTTP Header 이름은 대소문자를 구분하지 않습니다.
-따라서 우리는 어떠한 문자를 사용해서도 원하는 헤더에 접근할 수 있습니다::
+따라서 우리는 어떠한 문자를 사용해서도 원하는 헤더에 접근할 수 있습니다. ::
 
     >>> r.headers['Content-Type']
     'application/json'
@@ -359,7 +358,7 @@ HTTP 헤더를 만들때 dictionary는 특별합니다.
     'application/json'
 
 이것은 서버가 같은 헤더를 어러번 다른값을 전송하는 특별한 경우가 있습니다,
-`RFC 7230 <http://tools.ietf.org/html/rfc7230#section-3.2>`_에 따라서 Requests는 single mapping을 이용하여 dictionary로 나타냅니다.:
+`RFC 7230 <http://tools.ietf.org/html/rfc7230#section-3.2>`_에 따라서 Requests는 single mapping을 이용하여 dictionary로 나타냅니다. :
 
     A recipient MAY combine multiple header fields with the same field name
     into one "field-name: field-value" pair, without changing the semantics
@@ -369,7 +368,7 @@ HTTP 헤더를 만들때 dictionary는 특별합니다.
 Cookies
 -------
 
-만약 Cookie를 포함한 응답을 받았다면 다음과 같이 접근할 수 있습니다::
+만약 Cookie를 포함한 응답을 받았다면 다음과 같이 접근할 수 있습니다. ::
 
     >>> url = 'http://example.com/some/cookie/setting/url'
     >>> r = requests.get(url)
@@ -378,7 +377,7 @@ Cookies
     'example_cookie_value'
 
 
-``cookies`` 파라메터를 이용하여 자신만의 쿠키를 서버에 전송할수 있습니다::
+``cookies`` 파라메터를 이용하여 자신만의 쿠키를 서버에 전송할수 있습니다. ::
 
     >>> url = 'http://httpbin.org/cookies'
     >>> cookies = dict(cookies_are='working')
@@ -392,13 +391,13 @@ Redirection and History
 -----------------------
 
 기본적으로 리퀘스트는 HEAD 구문을 제외한 모든 구문은 redirect를 시행합니다.
-우리는 ``history``를 이용하여 redirect를 추적할수 있습니다.
+우리는 ``history`` 를 이용하여 redirect를 추적할수 있습니다.
 
 :meth:`Response.history <requests.Response.history>` 리스트 는 완벽한 리퀘스트에 의해 생성된
 :class:`Response <requests.Response>` 오브젝트를 포함합니다.
 이 리스트는 오래된것부터 최신순으로 정렬되어 있습니다.
 
-예를 들어, GitHub 의 모든 HTTP 리퀘스트는 HTTPS로 리다이렉트됩니다.::
+예를 들어, GitHub 의 모든 HTTP 리퀘스트는 HTTPS로 리다이렉트됩니다. ::
 
     >>> r = requests.get('http://github.com')
 
@@ -413,7 +412,7 @@ Redirection and History
 
 
 만약 GET, OPTIONS, POST,PUT, PATCH 혹은 DELETE를 사용한다면, 당신은 ``allow_redirects`` 파라메터를 이용하여
-자동으로 리다이렉트되는것을 막을 수 있습니다.::
+자동으로 리다이렉트되는것을 막을 수 있습니다. ::
 
     >>> r = requests.get('http://github.com', allow_redirects=False)
 
@@ -424,7 +423,7 @@ Redirection and History
     []
 
 
-만약 HEAD를 사용한다면 당신은 reddirection을 활성화 시킬수 있습니다.::
+만약 HEAD를 사용한다면 당신은 reddirection을 활성화 시킬수 있습니다. ::
 
     >>> r = requests.head('http://github.com', allow_redirects=True)
 
@@ -438,7 +437,7 @@ Redirection and History
 Timeouts
 --------
 
-Requests에게 응답을 주어진 ``timeout`` 파라메터 시간만큼만 기다리고 멈추라고 말할수 있습니다.::
+Requests에게 응답을 주어진 ``timeout`` 파라메터 시간만큼만 기다리고 멈추라고 말할수 있습니다. ::
 
     >>> requests.get('http://github.com', timeout=0.001)
     Traceback (most recent call last):
