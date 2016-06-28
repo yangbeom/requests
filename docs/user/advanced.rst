@@ -10,7 +10,7 @@ Session Objects
 ---------------
 
 세션 오브젝트는 연결 되어 있는동안 파라메터들을 포함한 리퀘스트를 전송 하는 것을 허락합니다.
-이것은 ``urllib3``에 `connection pooling`_ 을 이용하여 모든 리퀘스트가 세션대신 만든 쿠키를 포함합니다.
+이것은 ``urllib3`` 에 `connection pooling`_ 을 이용하여 모든 리퀘스트가 세션대신 만든 쿠키를 포함합니다.
 그래서 당신이 같은 호스트에 여러 리퀘스트들을 만들었다면 근원적인 TCP연결을 재사용하여
 중요한 퍼포먼스 증가를 보줄것입니다.(`HTTP persistent connection`_ 을 참고하세요).
 
@@ -202,7 +202,7 @@ Requests는 HTTPS리퀘스트의 SSL 인증서를 웹브라우저처럼 확인�
     >>> requests.get('https://github.com', verify='/path/to/certfile')
 
 .. note:: 만약 ``verify`` 가 해당 디렉토리에 위치되어있다면,
-디렉토리는 c_rehash utility를 OpenSSL를 이용하여 처리될 것 입니다.
+    디렉토리는 c_rehash utility를 OpenSSL를 이용하여 처리될 것 입니다.
 
 이 신뢰되는 CA의 리스트는 명시된 ``REQUESTS_CA_BUNDLE`` 환경 변수를 통하여 이용할 수 있습니다.
 Requests ``verify`` 를 False로 설정했다면 또한 SSL 인증서를 거부할수 있습니다. ::
@@ -250,30 +250,27 @@ Body Content Workflow
 
 기본적으로 request를 만들때 응답의 body를 즉시 다운로드받습니다.
 당신은 이 행동을 override 할 수 있습니다.
-그리고 respone의 바디를 ``stream`` 파라메터를 이용하여 :class:`Response.content <requests.Response.content>`에 접근
+그리고 respone의 바디를 ``stream`` 파라메터를 이용하여 :class:`Response.content <requests.Response.content>` 에 접근
 할때 까지 다운로드하는 것을 연기 할수 있습니다.::
 
     tarball_url = 'https://github.com/kennethreitz/requests/tarball/master'
     r = requests.get(tarball_url, stream=True)
 
-At this point only the response headers have been downloaded and the connection
-remains open, hence allowing us to make content retrieval conditional::
-
-이러한 관점에서 다운로드된 응답 헤더들과  연결되어있는 상태에서 조건문을 이용하여 컨텐츠를 검색할수 있습니다.::
+이러한 관점에서 다운로드된 응답 헤더들과  연결되어있는 상태에서 조건문을 이용하여 컨텐츠를 검색할수 있습니다. ::
 
     if int(r.headers['content-length']) < TOO_LONG:
       content = r.content
       ...
 
-당신은 또한 :class:`Response.iter_content <requests.Response.iter_content>`와
+당신은 또한 :class:`Response.iter_content <requests.Response.iter_content>` 와
 :class:`Response.iter_lines <requests.Response.iter_lines>` 메소드를 이용하여 작업을 컨트롤 할 수 있습니다.
 그대신, 당신은 decoded 되지 않은 바디를 urllib3의 :class:`urllib3.HTTPResponse <urllib3.response.HTTPResponse>` 의
-:class:`Response.raw <requests.Response.raw>`를 이용하여 읽을 수 있습니다.
+:class:`Response.raw <requests.Response.raw>` 를 이용하여 읽을 수 있습니다.
 
 request를 만들때 ``stream`` 을 ``True`` 로 설정했다면,
 Requests는 당신이 모든 데이터를 소진할때까지 또는 :class:`Response.close <requests.Response.close>` 를
 부를때까지 연결을 유지하고 있을 것입니다. 이것은 연결의 비효율을 야기합니다.
-만약 ``stream=True`` 를 사용하는 동안에 requests의 body의 전체가 아닌 일부를 읽고싶다면
+만약 ``stream=True`` 를 사용하는 동안에 requests의 body의 전체가 아닌 일부를 읽고 싶다면
 아래와 같이 ``contextlib.closing`` (`documented here`_) 을 사용하시길 바랍니다.::
 
     from contextlib import closing
@@ -308,7 +305,7 @@ Streaming Uploads
 .. warning:: 파일을 열때 `binary mode`_ 로 여는 것을 권장합니다.
              Requests는 ``Content-Length`` 의 값이 파일의 bytes로 설정하여
              당신에게 ``Content-Length`` 헤더를 제공합니다.
-             만약 당신이 파일을 *text mode*로 열었다면 에러를 유발할 것입니다.
+             만약 당신이 파일을 *text mode* 로 열었다면 에러를 유발할 것입니다.
 
 .. _binary mode: https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files
 
@@ -361,7 +358,7 @@ POST Multiple Multipart-Encoded Files
 .. warning:: 파일을 열때 `binary mode`_ 로 여는 것을 권장합니다.
              Requests는 ``Content-Length`` 의 값이 파일의 bytes로 설정하여
              당신에게 ``Content-Length`` 헤더를 제공합니다.
-             만약 당신이 파일을 *text mode*로 열었다면 에러를 유발할 것입니다.
+             만약 당신이 파일을 *text mode* 로 열었다면 에러를 유발할 것입니다.
 
 .. _binary mode: https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files
 
@@ -381,12 +378,10 @@ Requests는 당신이 request 프로세스의 일부를 조정하거나 signal �
 
     hooks=dict(response=print_url)
 
-
 이 ``callback_function`` 은 거대한 양의 데이터를 첫 번째 인자로 받을것입니다.::
 
     def print_url(r, *args, **kwargs):
         print(r.url)
-
 
 만약 당신의 callback을 실행하는동안 에러를 유발한다면, 경고를 주는것입니다.
 만약 callback function이 값을 return 한다면, 데이터가 안으로 들어왔다고 생각할 수 있습니다.
@@ -491,18 +486,19 @@ Proxies
     >>> import requests
     >>> requests.get('http://example.org')
 
-`http://user:password@host/`문법을 이용하여 설정한 프록시를 통하여 HTTP Basic 인증을 사용합니다::
+`http://user:password@host/` 문법을 이용하여 설정한 프록시를 통하여 HTTP Basic 인증을 사용합니다::
 
     proxies = {'http': 'http://user:pass@10.10.1.10:3128/'}
 
 
-프록시를 줄수있습니다 구체적으로 scheme 과 host를 `scheme://hostname`를 이용하여 프록시를 만들수 있습니다?.
+프록시를 줄수있습니다 구체적으로 scheme 과 host를 `scheme://hostname` 를 이용하여 프록시를 만들수 있습니다?.
 이것은 어떤 리퀘스트라도 scheme과 정확한 hostname을 받아 비교할 것입니다::
 
     proxies = {'http://10.20.1.128': 'http://10.10.1.10:5323'}
 
 
 위의 프록시 URL들은 반드시 scheme을 포함해야합니다.
+
 SOCKS
 ^^^^^
 
@@ -516,7 +512,7 @@ SOCKS
 
     $ pip install requests[socks]
 
-해당 라이브러리를 설치했다면, SOCKS 프록시를 HTTP를 이용하는 것과 같이 쉽게 이용할 수 있습니다.::
+해당 라이브러리를 설치했다면, SOCKS 프록시를 HTTP를 이용하는 것과 같이 쉽게 이용할 수 있습니다. ::
 
     proxies = {
         'http': 'socks5://user:pass@host:port',
@@ -544,9 +540,9 @@ Requests는 처음으로 HTTP header안에 encoding을 확인합니다. 그리�
 Requests는 그것에 따를것입니다.
 그렇지 않은 경우 `RFC 2616 <http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.7.1>`_ 를 따라 기본 charset을
 ``ISO-8859-1`` 로 설정합니다.
-Requests는 이 경우 사양을 따릅니다.
 만약 요구하는 encoding이 다르다면, :attr:`Response.encoding <requests.Response.encoding>` 의 값을 수동으로 설정하거나,
 :attr:`Response.content <requests.Response.content>` 를 이용하여 raw 응답을 이용할 수 있습니다.
+
 .. _http-verbs:
 
 HTTP Verbs
@@ -563,9 +559,8 @@ Requests는 거의 모든 HTTP 구문(GET, OPTIONS,HEAD, POST, PUT, PATCH 그리
     >>> import requests
     >>> r = requests.get('https://api.github.com/repos/kennethreitz/requests/git/commits/a050faf084662f3a352dd1a941f2c7c9f886d4ad')
 
-
 우리는 GitHub의 바른 응답을 확인할 수 있습니다.
-만약 우리가 받은 컨텐츠의 종류가 무엇인지 알고 싶다면, 다음과 같이 할 수 있습니다.::
+만약 우리가 받은 컨텐츠의 종류가 무엇인지 알고 싶다면, 다음과 같이 할 수 있습니다. ::
 
     >>> if r.status_code == requests.codes.ok:
     ...     print(r.headers['content-type'])
@@ -574,7 +569,7 @@ Requests는 거의 모든 HTTP 구문(GET, OPTIONS,HEAD, POST, PUT, PATCH 그리
 
 
 따라서, GitHub는 JSON을 보내주었습니다.
-좋습니다. 우리는 :meth:`r.json <requests.Response.json>` 메소드를 이용하여 Python 오브젝트로 변환 하여 사용할 수 있습니다.::
+좋습니다. 우리는 :meth:`r.json <requests.Response.json>` 메소드를 이용하여 Python 오브젝트로 변환 하여 사용할 수 있습니다. ::
 
     >>> commit_data = r.json()
 
@@ -592,7 +587,7 @@ Requests는 거의 모든 HTTP 구문(GET, OPTIONS,HEAD, POST, PUT, PATCH 그리
 이제 우리는 문서를 찾을것입니다.
 그러나 우리는 만약 requests를 사용하지 않는대신 재미있는 방법을 통하여 찾아 볼 것입니다.
 우리는 Requests의 OPTIONS 구문을 활용할수있습니다.
-HTTP 메소드의 일종인 OPTIONS는 url을 지원하기 때문에 우리는 이용만 하면됩니다.::
+HTTP 메소드의 일종인 OPTIONS는 url을 지원하기 때문에 우리는 이용만 하면됩니다. ::
 
     >>> verbs = requests.options(r.url)
     >>> verbs.status_code
@@ -601,7 +596,7 @@ HTTP 메소드의 일종인 OPTIONS는 url을 지원하기 때문에 우리는 �
 음 뭐죠? 별 도움이 되지 않네요! GitHub는 많은 API를 제공하는것처럼 보이지만 사실상 OPTIONS 함수는 실행되지 않네요.
 이것을 간과했네요. 그러나 괜찮아요, 우리는 이 지루한 문서를 이어가도록하죠.
 만약 GitHub가 OPTIONS가 재대로 실행됐다면, 그들은 우리가 사용할 수 있는 메소드들을 헤더에 포함해서 보내줬을 것입니다.
-예를들면 다음과 같이말이죠.::
+예를들면 다음과 같이말이죠. ::
 
     >>> verbs = requests.options('http://a-good-website.com/api/cats')
     >>> print(verbs.headers['allow'])
@@ -612,7 +607,7 @@ HTTP 메소드의 일종인 OPTIONS는 url을 지원하기 때문에 우리는 �
 따라서 우리는 Requests의 repo를 사용하기위해, 우리는 서툴지만 POSTS 만들어 쓰는것을 피해야합니다.
 대신, GitHub의 상태 Issue들을 확인해봅시다.
 이제 Issue #482를 받아 볼 것입니다.
-우리의 예제로 사용하기 위해 해당 이슈는 이미 존재하고 있습니다. 같이 해봅시다.::
+우리의 예제로 사용하기 위해 해당 이슈는 이미 존재하고 있습니다. 같이 해봅시다. ::
 
     >>> r = requests.get('https://api.github.com/repos/kennethreitz/requests/issues/482')
     >>> r.status_code
@@ -626,7 +621,7 @@ HTTP 메소드의 일종인 OPTIONS는 url을 지원하기 때문에 우리는 �
     >>> print(issue[u'comments'])
     3
 
-좋아요, 이슈에 3개의 코멘트가 달려있네요. 그중에 마지막 코멘트를 확인해 봅시다.::
+좋아요, 이슈에 3개의 코멘트가 달려있네요. 그중에 마지막 코멘트를 확인해 봅시다. ::
 
     >>> r = requests.get(r.url + u'/comments')
     >>> r.status_code
@@ -640,12 +635,9 @@ HTTP 메소드의 일종인 OPTIONS는 url을 지원하기 때문에 우리는 �
     >>> print(comments[2][u'body'])
     Probably in the "advanced" section
 
-Well, that seems like a silly place.
-Let's post a comment telling the poster that he's silly.
-Who is the poster, anyway?
 
 네, 아무것도 아닌 내용같네요.
-글올린 바보 같은 사람에 대해서 이야기해보죠.
+글올린 사람에 대해서 이야기해보죠.
 누가 올렸을까요?
 ::
 
@@ -654,9 +646,7 @@ Who is the poster, anyway?
 
 
 네, Kenneth가 우리의 생각은 이 예제가 quickstart 가이드 대신 이곳에 적혀있어야 한다고 말하네요.
-GitHub API 문서에 따르면, 스레드에 comment를 작성하는 것은 POST를 이용하는 방법이 있다고 하네요. 해봅시다
-
-::
+GitHub API 문서에 따르면, 스레드에 comment를 작성하는 것은 POST를 이용하는 방법이 있다고 하네요. 해봅시다. ::
 
     >>> body = json.dumps({u"body": u"Sounds great! I'll get right on it!"})
     >>> url = u"https://api.github.com/repos/kennethreitz/requests/issues/482/comments"
@@ -667,8 +657,8 @@ GitHub API 문서에 따르면, 스레드에 comment를 작성하는 것은 POST
 
 허, 이거 이상하네요.
 우리는 증명이 필요합니다.
-이것이 우릴 방해하네요 그렇죠?
-틀렸습니다. Requests는 가장 흔한 Basic Auth 를 포함해 많은 인증폼들을 이용해 사용할수있습니다.::
+이것때문에 우리가 이용 할수 없겠죠?
+틀렸습니다. Requests는 가장 흔한 Basic Auth 를 포함해 많은 인증폼들을 이용해 사용할 수 있습니다. ::
 
     >>> from requests.auth import HTTPBasicAuth
     >>> auth = HTTPBasicAuth('fake@example.com', 'not_a_real_password')
@@ -684,7 +674,7 @@ GitHub API 문서에 따르면, 스레드에 comment를 작성하는 것은 POST
 대단합니다. 오 잠시만요!
 음 잠시 시간을 줄수있나요? 고양이에게 밥을 줘야하기때문이죠.
 coomment를 수정할수 있었으면 좋겠네요, GitHub가 우리에게 comment 수정을 위한 다른 HTTP 구문인 PATCH를 허락한다면 말이죠.
-그럼 해봅시다.::
+그럼 해봅시다. ::
 
     >>> print(content[u"id"])
     5804413
@@ -701,8 +691,7 @@ coomment를 수정할수 있었으면 좋겠네요, GitHub가 우리에게 comme
 이제 Kenneth를 괴롭히기위해 comment를 바꿀거에요 그리고 그에게 내가 이것을 했다는걸 말하지 않을 거에요.
 그말은 이 comment를 삭제하고 싶단거죠.
 GitHub 우리가 comment를 삭제하기위해 적절한 이름의 DELETE 메소드를 사용할수 있습니다.
-따라오세요.
-::
+따라오세요. ::
 
     >>> r = requests.delete(url=url, auth=auth)
     >>> r.status_code
@@ -714,7 +703,7 @@ GitHub 우리가 comment를 삭제하기위해 적절한 이름의 DELETE 메소
 마지막으로 내가 사용한 ratelimit을 알기 원해요.
 찾아봅시다.
 GitHub는  헤더에 약간의 정보를 포함해 보내줍니다.
-모든 다운로드를 받지 않았다면 HEAD 리퀘스트를 보내 헤더를 확인할 수 있습니다.::
+모든 다운로드를 받지 않았다면 HEAD 리퀘스트를 보내 헤더를 확인할 수 있습니다. ::
 
     >>> r = requests.head(url=url, auth=auth)
     >>> print(r.headers)
@@ -735,7 +724,7 @@ Link Headers
 많은 HTTP API들이 Link 헤더를 갖고 있습니다. API들을 만들때 언급하거나 언급되고 있습니다?
 
 GitHub 는 이것을 `pagination <http://developer.github.com/v3/#pagination>`_ 에 사용합니다.
-그들의 API입니다 확인해 봅시다.::
+그들의 API입니다 확인해 봅시다. ::
 
     >>> url = 'https://api.github.com/users/kennethreitz/repos?page=1&per_page=10'
     >>> r = requests.head(url=url)
@@ -743,7 +732,7 @@ GitHub 는 이것을 `pagination <http://developer.github.com/v3/#pagination>`_ 
     '<https://api.github.com/users/kennethreitz/repos?page=2&per_page=10>; rel="next", <https://api.github.com/users/kennethreitz/repos?page=6&per_page=10>; rel="last"'
 
 
-Requests 는 자동으로 이 link 헤더들을 분석하고 사용하기 쉽게 만들어줍니다 ::
+Requests 는 자동으로 이 link 헤더들을 분석하고 사용하기 쉽게 만들어줍니다. ::
 
     >>> r.links["next"]
     {'url': 'https://api.github.com/users/kennethreitz/repos?page=2&per_page=10', 'rel': 'next'}
@@ -787,7 +776,7 @@ Requests 팀은 어떤 SSL버전이던 기본적으로 `urllib3`_ 를 이용해 
 
 당신은 현재 실행중인 HTTPAdapter를 가져오기오기 위해 전송어댑터를 이용할수있습니다.
 그리고 *ssl_version*을 통과하게 할 수 있습니다.
-우리는 SSLv3를 이용해 사용할수 있게 만들 수 있습니다.::
+우리는 SSLv3를 이용해 사용할수 있게 만들 수 있습니다. ::
 
     import ssl
 
@@ -813,7 +802,7 @@ Blocking Or Non-Blocking?
 
 Requests는 기본적인 전송 어댑터를 이용해 어떠한 non-blocking IO도 지원하지 않습니다.
 :attr:`Response.content <requests.Response.content>` 아마 다운로드가 다될때 까지 막혀있습니다.
-만약 non-blocking 을 원한다면,스트림 형태의 라이브러리( :ref:`streaming-requests` )가 많은 시간을 절약해 줄수 있을 것입니다.
+만약 non-blocking 을 원한다면,스트림 형태의 라이브러리(:ref:`streaming-requests`)가 많은 시간을 절약해 줄수 있을 것입니다.
 그러나, 이 호출은 여전히 스트림형태가아닙니다.
 
 만약 blocking IO를 사용하는것이 걱정된다면,
@@ -843,7 +832,7 @@ timeout이 없다면, 당신의 코드가 몇분동안 연결되어 있을 수 �
     r = requests.get('https://github.com', timeout=5)
 
 타임아웃 값은 ``connect`` 와 ``read`` 타임아웃에 둘다 적용될것입니다.
-만약 두 값을 분리하고싶다면 튜플을 사용해 사용할 수 있습니다.::
+만약 두 값을 분리하고싶다면 튜플을 사용해 사용할 수 있습니다. ::
 
     r = requests.get('https://github.com', timeout=(3.05, 27))
 
