@@ -8,7 +8,7 @@ ScraperWiki
 그리고 PHP scraper 스크립트를 웹에서 사용하기에 좋은 서비스입니다.
 Requests v0.6.1을 ScraperWiki에서 사용 가능합니다.
 
-간단하게 시도해보세요::
+간단하게 시도해보세요. ::
 
     import requests
 
@@ -16,7 +16,7 @@ Python for iOS
 --------------
 
 Requests 는 `Python for iOS <https://itunes.apple.com/us/app/python-2.7-for-ios/id485729872?mt=Python8>`_ 에서도 동작합니다.
-간단하게 확인이 가능합니다 ::
+간단하게 확인이 가능합니다. ::
 
     import requests
 
