@@ -77,7 +77,6 @@ Requests의 설치는 다음과 같습니다.
 Documentation
 -------------
 
-Fantastic documentation is available at http://docs.python-requests.org/, for a limited time only.
 환상적인 문서는 http://docs.python-requests.org/ 에서 볼 수 있습니다.
 
 How to Contribute
