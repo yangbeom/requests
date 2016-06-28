@@ -24,7 +24,7 @@ Send a Tweet
 File an Issue
 -------------
 
-만약 니가 Requests에서 예상외의 경험을 알리고 싶거나 미래에 지원을 받고 싶다면?
+만약 Requests에서 예상외의 경험을 알리고 싶거나 미래에 지원을 받고 싶다면?
 `file an issue on GitHub <https://github.com/kennethreitz/requests/issues>`_.
 
 
@@ -32,7 +32,7 @@ E-mail
 ------
 
 저는 Requests에 관한 질문에 답하는 것을 싫어 하지 않습니다.
-언제든 `requests@kennethreitz.com <mailto:requests@kennethreitz.com>`_으로 메일을 보내주세요.
+언제든 `requests@kennethreitz.com <mailto:requests@kennethreitz.com>`_ 으로 메일을 보내주세요.
 
 
 IRC

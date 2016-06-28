@@ -27,7 +27,7 @@ Be Cordial
     **Be cordial or be on your way**. *—Kenneth Reitz*
 
 Requests 는 버그리포팅 혹은 특색에 대한 요구던지 모든 기여에 엄격한 중요한 룰이 있습니다.
-중요한 룰은 "`be cordial or be on your way`_" 입니다.
+중요한 룰은 "`be cordial or be on your way`_ " 입니다.
 
 
 **모든 기여는 환영합니다**, 관련된 모든 사람들을 존중합니다.
@@ -103,7 +103,7 @@ Requests는 `PEP 8`_ 코드스타일을 기반으로 하고있습니다.
 - 100자를 넘기지 않았을때 너무 불편할경우 라인의 길이는 100자를 넘을수 있습니다.
 - 작은따옴표가 문자열에 있지 않다면 언제나 문자열에서는 작은따옴표를 사용합니다.(e.g. ``'#flatearth'``)
 
-추가적으로, PEP8이 제안하는 미각적으로 완벽히 부족한 `line continuations`_의 하나의 스타일입니다.
+추가적으로, PEP8이 제안하는 미각적으로 완벽히 부족한 `line continuations`_ 의 하나의 스타일입니다.
 Requests의 코드에 허락하지 않습니다.::
 
     # Aligned with opening delimiter.
@@ -134,7 +134,7 @@ Docstring은 다음과 같은 문법을 따릅니다 ::
         pass
 
 모든 함수, 메소드, 그리고 클래스들은 docstring을 포함하고있습니다.
-오브젝트 데이타 모델 메소드는 (e.g. ``__repr__``) 보통 이룰에 적용되지 안습니다.
+오브젝트 데이타 모델 메소드는 (e.g. ``__repr__`` ) 보통 이룰에 적용되지 안습니다.
 Requests를 더욱 좋게 만드는데 도움을 주셔서 감사합니다.
 
 .. _PEP 8: http://pep8.org
@@ -145,7 +145,7 @@ Documentation Contributions
 
 문서의 향상은 언제나 환영합니다!
 문서파일들은 ``docs/`` 디렉토리안에 있습니다.
-문서들은 `reStructuredText`_를 이용해 쓰여있으며, `Sphinx`_를 이용해 만들어 졌습니다.
+문서들은 `reStructuredText`_ 를 이용해 쓰여있으며, `Sphinx`_ 를 이용해 만들어 졌습니다.
 문서를 기여할때, 문서 파일의 스타일을 따라가는데 최선을 다하세요.
 이것은 당신의 문서안에 79자를 넘기는것, 어느정도 격식을 갖추면서 친근하게하고, 이해하기 쉽게 산문체로 작성해주세요.
 

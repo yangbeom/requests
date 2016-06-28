@@ -53,4 +53,4 @@ Are you crazy?
 Downstream Repackaging
 ----------------------
 
-만약 니가 Requests 리패키징을 원한다면, 당신은 올바른 SSL기능을 위해 ``cacerts.pem``파일을 재배포해야합니다.
+만약 니가 Requests 리패키징을 원한다면, 당신은 올바른 SSL기능을 위해 ``cacerts.pem`` 파일을 재배포해야합니다.

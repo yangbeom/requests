@@ -62,7 +62,7 @@ cookie를 이용하여 계속하여 리퀘스트를 전송해 봅시다 ::
 
 
 만약 당신이 수동으로 쿠키를 session에  추가할수 있습니다.
-:attr:`Session.cookies <requests.Session.cookies>`를 이용하여 :ref:`Cookie utility functions <api-cookies>` 를 다룰수 있습니다.
+:attr:`Session.cookies <requests.Session.cookies>` 를 이용하여 :ref:`Cookie utility functions <api-cookies>` 를 다룰수 있습니다.
 
 세션은 또한 context manager로 이용할수 있습니다.::
 
@@ -75,7 +75,7 @@ cookie를 이용하여 계속하여 리퀘스트를 전송해 봅시다 ::
 .. admonition:: Remove a Value From a Dict Parameter
 
     때때로 당신은 Dict 파라메터에서 세션레벨의 키를 생략하고 싶을때가 있을것입니다.
-    간단하게 메소드레벨의 파라메터 키값을 ``None``으로 하면 자동적으로 생략될것입니다.
+    간단하게 메소드레벨의 파라메터 키값을 ``None`` 으로 하면 자동적으로 생략될것입니다.
 
 
 모든 값은 세션안에 당신이 접근가능하게 포함되어있습니다.
@@ -87,8 +87,8 @@ Request and Response Objects
 ----------------------------
 
 첫째로, 당신은 서버에 보내기위한 리퀘스트 혹은 쿼리를 ``Request`` 오브젝트 를 구성할수 있습니다.
-언제던 ``requests.get()``을 만들어 부를수 있습니다. 그리고 중요한 친구인 두개도 같이 부를수있습니다.
-두번째로, ``Response`` 오브젝트는 하나의 ``requests``의 서버에서 온 응답으로 얻을 수 있습니다.
+언제던 ``requests.get()`` 을 만들어 부를수 있습니다. 그리고 중요한 친구인 두개도 같이 부를수있습니다.
+두번째로, ``Response`` 오브젝트는 하나의 ``requests`` 의 서버에서 온 응답으로 얻을 수 있습니다.
 응답 오브젝트는 서버에서 온 모든 정보를 포함하고있습니다.
 그리고 또한 본래의 ``Request`` 오브젝트를 포함하고 있습니다.
 여기 간단한 Wikipedia의 서버에서 중요한 정보를 가져오는 리퀘스트 예제가 있습니다.::
@@ -120,8 +120,8 @@ Request and Response Objects
 Prepared Requests
 -----------------
 
-API 콜 또는 Session 콜을 통하여 :class:`Response <requests.Response>`를 받을때
-``request``는 실제로 이전에 사용된 ``PreparedRequest``의 결과로 봅니다.
+API 콜 또는 Session 콜을 통하여 :class:`Response <requests.Response>` 를 받을때
+``request`` 는 실제로 이전에 사용된 ``PreparedRequest`` 의 결과로 봅니다.
 당신은 request를 보내기전에 바디나 헤더 혹은 어디서든 추가적인 일을 원할 수 있습니다.
 그럴땐 다음과 같이 해보세요.::
 
@@ -150,12 +150,12 @@ API 콜 또는 Session 콜을 통하여 :class:`Response <requests.Response>`를
 
 
 ``Request`` 오브젝트에 당신이 아무것도 안할때부터, 그리고 ``PreparedRequest`` 오브젝트를 수정한 후에도
-다른 파라메터를 포함하여 ``requests.*`` 나 ``Session.*``을 보낼수 있게 준비 되어있습니다.
+다른 파라메터를 포함하여 ``requests.*`` 나 ``Session.*`` 을 보낼수 있게 준비 되어있습니다.
 
 그러나, 코드를 넘어서 리퀘스트의 :class:`Session <requests.Session>` 오브젝트는 작은 이점을 갖고있습니다.
-상태를 적용한 상태로 :class:`PreparedRequest <requests.PreparedRequest>`를 갖을 수 있습니다.
-다음과 같이 :meth:`Request.prepare() <requests.Request.prepare>`를 부르는 대신
-:meth:`Session.prepare_request() <requests.Session.prepare_request>`를 부를 수 있습니다.::
+상태를 적용한 상태로 :class:`PreparedRequest <requests.PreparedRequest>` 를 갖을 수 있습니다.
+다음과 같이 :meth:`Request.prepare() <requests.Request.prepare>` 를 부르는 대신
+:meth:`Session.prepare_request() <requests.Session.prepare_request>` 를 부를 수 있습니다.::
 
     from requests import Request, Session
 
@@ -205,13 +205,13 @@ Requests는 HTTPS리퀘스트의 SSL 인증서를 웹브라우저처럼 확인�
 디렉토리는 c_rehash utility를 OpenSSL를 이용하여 처리될 것 입니다.
 
 이 신뢰되는 CA의 리스트는 명시된 ``REQUESTS_CA_BUNDLE`` 환경 변수를 통하여 이용할 수 있습니다.
-Requests ``verify``를 False로 설정했다면 또한 SSL 인증서를 거부할수 있습니다. ::
+Requests ``verify`` 를 False로 설정했다면 또한 SSL 인증서를 거부할수 있습니다. ::
 
     >>> requests.get('https://kennethreitz.com', verify=False)
     <Response [200]>
 
 
-기본적으로 ``verify``는 True로 설정 되어있습니다. 선택 가능한 ``verify``는 host의 인증서 뿐입니다.
+기본적으로 ``verify`` 는 True로 설정 되어있습니다. 선택 가능한 ``verify`` 는 host의 인증서 뿐입니다.
 당신은 또한 클라이언트가 사용할 인증서를 하나의 파일(개인키 와 인증서를 포함하고있는)
 또는 두개의 파일을 튜플로 명시할수있습니다.::
 
@@ -270,7 +270,7 @@ remains open, hence allowing us to make content retrieval conditional::
 그대신, 당신은 decoded 되지 않은 바디를 urllib3의 :class:`urllib3.HTTPResponse <urllib3.response.HTTPResponse>` 의
 :class:`Response.raw <requests.Response.raw>`를 이용하여 읽을 수 있습니다.
 
-request를 만들때 ``stream``을 ``True``로 설정했다면,
+request를 만들때 ``stream`` 을 ``True`` 로 설정했다면,
 Requests는 당신이 모든 데이터를 소진할때까지 또는 :class:`Response.close <requests.Response.close>` 를
 부를때까지 연결을 유지하고 있을 것입니다. 이것은 연결의 비효율을 야기합니다.
 만약 ``stream=True`` 를 사용하는 동안에 requests의 body의 전체가 아닌 일부를 읽고싶다면
@@ -292,7 +292,7 @@ Keep-Alive
 어떤 리퀘스트들이던 당신은 session을 이용하여 자동으로 적절한 연결을 재사용합니다.
 
 연결들은 단지 전부다 읽혀진 바디를 재사용하기위해 다시 풀에 넣어둡니다.
-``stream``을 ``False``로 설정하거나 ``Response``오브젝트의 ``content``를 읽는것을 확실하게 해두세요.
+``stream`` 을 ``False`` 로 설정하거나 ``Response`` 오브젝트의 ``content`` 를 읽는것을 확실하게 해두세요.
 
 .. _streaming-uploads:
 
@@ -305,8 +305,8 @@ Streaming Uploads
     with open('massive-body', 'rb') as f:
         requests.post('http://some.url/streamed', data=f)
 
-.. warning:: 파일을 열때 `binary mode`_로 여는 것을 권장합니다.
-             Requests는 ``Content-Length``의 값이 파일의 bytes로 설정하여
+.. warning:: 파일을 열때 `binary mode`_ 로 여는 것을 권장합니다.
+             Requests는 ``Content-Length`` 의 값이 파일의 bytes로 설정하여
              당신에게 ``Content-Length`` 헤더를 제공합니다.
              만약 당신이 파일을 *text mode*로 열었다면 에러를 유발할 것입니다.
 
@@ -328,9 +328,9 @@ chunk-encoded 리퀘스트를 보내기 위해서는, 간단한 생성자(또는
     requests.post('http://some.url/chunked', data=gen())
 
 
-chunked encoded 응답들을 위해, :meth:`Response.iter_content() <requests.models.Response.iter_content>`를 사용하길 권장합니다.
-가장 이상적인 상황은 당신이 리퀘스트에 ``stream=True``로 설정을 했고,
-당신이 연속된 ``iter_content``를 chunk 사이즈 파라메터가 ``None``이 되기전까지 연속해서 부르는것 입니다.
+chunked encoded 응답들을 위해, :meth:`Response.iter_content() <requests.models.Response.iter_content>` 를 사용하길 권장합니다.
+가장 이상적인 상황은 당신이 리퀘스트에 ``stream=True`` 로 설정을 했고,
+당신이 연속된 ``iter_content`` 를 chunk 사이즈 파라메터가 ``None`` 이 되기전까지 연속해서 부르는것 입니다.
 또한 당신이 chunk의 최대 사이즈를 변경하기 원한다면, 원하는 크기로 chunk size 파라메터를 변경할 수 있습니다.
 
 .. _multipart:
@@ -343,7 +343,7 @@ POST Multiple Multipart-Encoded Files
 
     <input type="file" name="images" multiple="true" required="true"/>
 
-그러면 단지 파일들을  ``(form_field_name, file_info)``와 같이 리스트로 작성하시면 됩니다. ::
+그러면 단지 파일들을  ``(form_field_name, file_info)`` 와 같이 리스트로 작성하시면 됩니다. ::
 
     >>> url = 'http://httpbin.org/post'
     >>> multiple_files = [
@@ -358,8 +358,8 @@ POST Multiple Multipart-Encoded Files
       ...
     }
 
-.. warning:: 파일을 열때 `binary mode`_로 여는 것을 권장합니다.
-             Requests는 ``Content-Length``의 값이 파일의 bytes로 설정하여
+.. warning:: 파일을 열때 `binary mode`_ 로 여는 것을 권장합니다.
+             Requests는 ``Content-Length`` 의 값이 파일의 bytes로 설정하여
              당신에게 ``Content-Length`` 헤더를 제공합니다.
              만약 당신이 파일을 *text mode*로 열었다면 에러를 유발할 것입니다.
 
@@ -382,7 +382,7 @@ Requests는 당신이 request 프로세스의 일부를 조정하거나 signal �
     hooks=dict(response=print_url)
 
 
-이 ``callback_function``은 거대한 양의 데이터를 첫 번째 인자로 받을것입니다.::
+이 ``callback_function`` 은 거대한 양의 데이터를 첫 번째 인자로 받을것입니다.::
 
     def print_url(r, *args, **kwargs):
         print(r.url)
@@ -407,7 +407,7 @@ Custom Authentication
 리퀘스트는 사용자만의 인증 메커니즘을 명시해 사용할 수 있습니다.
 
 ``auth`` 인자가 필요한 request 메소드는 이것을 보내기전에 수정하는 기회를 갖을 것입니다.
-인증 구현을 위해서 서브클래스로 ``requests.auth.AuthBase``를 사용하여 정의하면 됩니다.
+인증 구현을 위해서 서브클래스로 ``requests.auth.AuthBase`` 를 사용하여 정의하면 됩니다.
 
 리퀘스트는 ``requests.auth`` 안에 있는 ``HTTPBasicAuth`` 와 ``HTTPDigestAuth`` 두가지의 인증 스키마를 구현하면 됩니다
 만약 ``X-Pizza`` 헤더에 패스워드 값을 설정하는 웹 서비스를 갖고 있다면 일반적이진 않지만 아래와 같이 해야할것입니다.::
@@ -436,9 +436,9 @@ Custom Authentication
 Streaming Requests
 ------------------
 
-:class:`requests.Response.iter_lines()`를 이용하여 쉽게 많은 양이 반복되는 `Twitter Streaming
+:class:`requests.Response.iter_lines()` 를 이용하여 쉽게 많은 양이 반복되는 `Twitter Streaming
 API <https://dev.twitter.com/streaming/overview>`_ 와 같은 streaming API들을 처리할 수 있습니다.
-간단하게 ``stream``을 ``True``로 설정하고 반복되는 많은 응답들을 :class:`~requests.Response.iter_lines()`로 처리하면 됩니다::
+간단하게 ``stream``을 ``True``로 설정하고 반복되는 많은 응답들을 :class:`~requests.Response.iter_lines()` 로 처리하면 됩니다::
 
     import json
     import requests
@@ -482,7 +482,7 @@ Proxies
     requests.get('http://example.org', proxies=proxies)
 
 
-당신은 또한 환경에 맞게 ``HTTP_PROXY`` 와 ``HTTPS_PROXY``로 프록시를 설정할수있습니다.::
+당신은 또한 환경에 맞게 ``HTTP_PROXY`` 와 ``HTTPS_PROXY`` 로 프록시를 설정할수있습니다.::
 
     $ export HTTP_PROXY="http://10.10.1.10:3128"
     $ export HTTPS_PROXY="http://10.10.1.10:1080"
@@ -510,7 +510,7 @@ SOCKS
 
 기본 HTTP proxy들 뿐만아니라, 리퀘스트는 또한 SOCKS 프로토콜을 이용한 프록시를 지원합니다.
 이것은 third-party 라이브러리를 설치해 사용해야하는 선택적인 옵션입니다.
-``pip``을 이용해서 다음과 같이 설치할 수 있습니다.
+``pip`` 을 이용해서 다음과 같이 설치할 수 있습니다.
 
 .. code-block:: bash
 
@@ -535,18 +535,18 @@ Requests는 적절한 설계되어 설계를 따르고 있습니다.
 Encodings
 ^^^^^^^^^
 
-응답을 받았을때, Requests는 :attr:`Response.text <requests.Response.text>`을 이용할때
+응답을 받았을때, Requests는 :attr:`Response.text <requests.Response.text>` 을 이용할때
 decoding을 하기 위해 encoding을 추측해 만듭니다.
 Requests는 처음으로 HTTP header안에 encoding을 확인합니다. 그리고 비어있다면
 `chardet <http://pypi.python.org/pypi/chardet>`_ 을 이용하여 encoding을 추측할 것입니다.
 
-만약 명쾌한 charset이 HTTP 헤더안에 있거나 ``Content-Type`` 헤더에 ``text``가 포함되어있다면
+만약 명쾌한 charset이 HTTP 헤더안에 있거나 ``Content-Type`` 헤더에 ``text`` 가 포함되어있다면
 Requests는 그것에 따를것입니다.
 그렇지 않은 경우 `RFC 2616 <http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.7.1>`_ 를 따라 기본 charset을
-``ISO-8859-1``로 설정합니다.
+``ISO-8859-1`` 로 설정합니다.
 Requests는 이 경우 사양을 따릅니다.
-만약 요구하는 encoding이 다르다면, :attr:`Response.encoding <requests.Response.encoding>`의 값을 수동으로 설정하거나,
-:attr:`Response.content <requests.Response.content>`를 이용하여 raw 응답을 이용할 수 있습니다.
+만약 요구하는 encoding이 다르다면, :attr:`Response.encoding <requests.Response.encoding>` 의 값을 수동으로 설정하거나,
+:attr:`Response.content <requests.Response.content>` 를 이용하여 raw 응답을 이용할 수 있습니다.
 .. _http-verbs:
 
 HTTP Verbs
@@ -761,9 +761,9 @@ v1.0.0 이후로 Requests는 내부 디자인이 모듈러로 바뀌었습니다
 전송 어뎁터는 HTTP 서비스를 위한 상호작용 메소드를 정의하는 메카니즘으로 제공됩니다.
 특히, 전송 어댑터는 당신이 서비스별로 환경을 적용할수 있게 해줍니다.
 
-Requests는 단일 전손 어댑터 :class:`HTTPAdapter <requests.adapters.HTTPAdapter>`를 포함했습니다.
+Requests는 단일 전손 어댑터 :class:`HTTPAdapter <requests.adapters.HTTPAdapter>` 를 포함했습니다.
 이 어댑터는 기본적으로 Requests의 HTTP와 HTTPS가 강력한 `urllib3`_ 라이브러리를 이용할 수 있게 상호작용을 제공합니다.
-Requests의 :class:`Session <requests.Session>`을 초기화할때,
+Requests의 :class:`Session <requests.Session>` 을 초기화할때,
 HTTP와 HTTPS를 위해 각각 :class:`Session <requests.Session>` 오브젝트 하나를 부여합니다.
 
 Requests는 유저가 만든 전송 어뎁터를 특정한 기능에 사용할 수 있습니다.
@@ -777,7 +777,7 @@ Requests는 유저가 만든 전송 어뎁터를 특정한 기능에 사용할 �
 한번 탑재되면, 어떤 HTTP 리퀘스트라도 session을 어떤 URL로 시작하던 사전에 등록한 전송 어댑터를 사용할수있습니다.
 전송 어댑터의 실행에 관한 자세한 사항은 이문서에 포함되어 있지 않습니다.
 그러나 다음 예제에서 간단하게 SSL을 사용하는 방법을 볼 수 있습니다.
-다음 ``requests.adapters.BaseAdapter``를 확인해 보시길 바랍니다.
+다음 ``requests.adapters.BaseAdapter`` 를 확인해 보시길 바랍니다.
 
 Example: Specific SSL Version
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -813,7 +813,7 @@ Blocking Or Non-Blocking?
 
 Requests는 기본적인 전송 어댑터를 이용해 어떠한 non-blocking IO도 지원하지 않습니다.
 :attr:`Response.content <requests.Response.content>` 아마 다운로드가 다될때 까지 막혀있습니다.
-만약 non-blocking 을 원한다면,스트림 형태의 라이브러리(:ref:`streaming-requests`)가 많은 시간을 절약해 줄수 있을 것입니다.
+만약 non-blocking 을 원한다면,스트림 형태의 라이브러리( :ref:`streaming-requests` )가 많은 시간을 절약해 줄수 있을 것입니다.
 그러나, 이 호출은 여전히 스트림형태가아닙니다.
 
 만약 blocking IO를 사용하는것이 걱정된다면,
@@ -842,7 +842,7 @@ timeout이 없다면, 당신의 코드가 몇분동안 연결되어 있을 수 �
 
     r = requests.get('https://github.com', timeout=5)
 
-타임아웃 값은 ``connect``와 ``read`` 타임아웃에 둘다 적용될것입니다.
+타임아웃 값은 ``connect`` 와 ``read`` 타임아웃에 둘다 적용될것입니다.
 만약 두 값을 분리하고싶다면 튜플을 사용해 사용할 수 있습니다.::
 
     r = requests.get('https://github.com', timeout=(3.05, 27))

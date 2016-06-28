@@ -8,7 +8,7 @@ Requests: HTTP for Humans
 
 Release v2.10.0. (:ref:`Installation <install>`)
 
-Requests 는 사람이 이해하기 쉬운 순수한? HTTP library입니다.
+Requests 는 사람이 이해하기 쉬운 순수한 HTTP library입니다.
 **경고:** Recreational 다른 HTTP라이브러리의 사용은 다음과 같은 위험성을 내포할수 있습니다.
 보안 취약점, 장황한 코드, 쓸데없는 시간낭비,
 끊임없는 문서를 읽기, 짜증, 두통, 심지어 죽음까지 포함되어 있을 수 있습니다.
@@ -67,22 +67,21 @@ Supported Features
 ------------------
 Requests는 최신 web에 대한 준비가 되어 있습니다.
 
--- 국제적 도메인과 URLs
--- Keep-Alive & Connection Pooling
--- 세션과 쿠키
--- 브라우저와 같은 SSL을 이용한 연결
--- 기존/경량화된 인증
--- 우아한 Key/Value 쿠키
-
--- 컨텐츠 자동 디코딩
--- Respone 바디의 유니코드화
--- Multipart 파일 업로드
--- HTTP(S) Proxy 지원
--- Connection Timeouts
--- 스트리밍 다운로드
--- ``.netrc`` 지원
--- 파편화된 Requests
--- 스레드 안정성
+- 국제적 도메인과 URLs
+- Keep-Alive & Connection Pooling
+- 세션과 쿠키
+- 브라우저와 같은 SSL을 이용한 연결
+- 기존/경량화된 인증
+- 우아한 Key/Value 쿠키
+- 컨텐츠 자동 디코딩
+- Respone 바디의 유니코드화
+- Multipart 파일 업로드
+- HTTP(S) Proxy 지원
+- Connection Timeouts
+- 스트리밍 다운로드
+- ``.netrc`` 지원
+- 파편화된 Requests
+- 스레드 안정성
 
 Requests는 Python 2.6 — 3.5, 그리고 PyPy를 지원합니다.
 

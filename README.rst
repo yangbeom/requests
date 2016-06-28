@@ -7,7 +7,7 @@ Requests: HTTP for Humans
 .. image:: https://img.shields.io/pypi/dm/requests.svg
         :target: https://pypi.python.org/pypi/requests
 
-Requests 는 사람이 이해하기 쉬운 순수한? HTTP library입니다.
+Requests 는 사람이 이해하기 쉬운 순수한 HTTP library입니다.
 
 **경고:** Recreational 다른 HTTP라이브러리의 사용은 다음과 같은 위험성을 내포할수 있습니다.
 보안 취약점, 장황한 코드, 쓸데없는 시간낭비, 끊임없는 문서를 읽기, 짜증, 두통, 심지어 죽음까지 포함되어 있을 수 있습니다.
@@ -28,7 +28,7 @@ Requests 는 사람이 이해하기 쉬운 순수한? HTTP library입니다.
     >>> r.json()
     {u'disk_usage': 368627, u'private_gists': 484, ...}
 
-Requests를 사용하지 않은 유사코드는 `여기 <https://gist.github.com/973705>`_서 보실 수 있습니다.
+Requests를 사용하지 않은 유사코드는 `여기 <https://gist.github.com/973705>`_ 에서 보실 수 있습니다.
 
 Requests는 당신이 손쉽게 거대한 파일을 HTTP/1.1 requests로 보내는것을 가능케 해줍니다.
 당신이 원하는 url에 쿼리를 추가하거나 form-encode된 POST 데이터를 수동으로 추가할 필요가 없습니다.

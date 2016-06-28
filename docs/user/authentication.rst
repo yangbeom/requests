@@ -77,7 +77,7 @@ Other Authentication
 
 리퀘스트는 다른 인증폼을 쉽고 빠르게 연결시킬수 있게 디자인 되었습니다.
 오픈소스 커뮤니티 멤버들은 복잡하거나 잘 사용하지 않는인증 핸들러를 자유롭게 만들 수 있습니다.
-`Requests organization`_에서 다음과 같은것들을 가져와 사용할 수 있습니다.
+`Requests organization`_ 에서 다음과 같은것들을 가져와 사용할 수 있습니다.
 
 - Kerberos_
 - NTLM_
@@ -106,7 +106,7 @@ Requests는 당신만의 인증폼을 쉽게 추가할수 있습니다.
 ``__call__`` 메소드는 어떠한 인증을 위한 요구사항에도 작동합니다.
 인증을 위한 어떤 폼들은 추가적으로 hook을 추가하여 추가적인 기능을 제공합니다.
 
-추가적인 예제들은 `Requests organization`_와 ``auth.py``파일에서 찾을 수 있습니다.
+추가적인 예제들은 `Requests organization`_ 와 ``auth.py`` 파일에서 찾을 수 있습니다.
 
 .. _OAuth: http://oauth.net/
 .. _requests_oauthlib: https://github.com/requests/requests-oauthlib

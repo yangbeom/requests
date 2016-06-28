@@ -6,6 +6,7 @@ Quickstart
 .. module:: requests.models
 
 Requests를 시작하기 원하나요?
+
 이 페이지는 Requests를 사용하는 방법에 대해 적혀있습니다.
 
 먼저, 설치와 업데이트를 진행하세요 :
@@ -19,12 +20,12 @@ Make a Request
 --------------
 
 Requests를 이용하여 리퀘스트를 만드는것은 매우 간단합니다.
-우선 Requests 모듈을 import 해봅시다 ::
+
+우선 Requests 모듈을 import 해봅시다. ::
 
     >>> import requests
 
-
-이제 웹페이지를 접속해봅시다. GitHub의 타임라인에 접속하는 예제입니다 ::
+이제 웹페이지를 접속해봅시다. GitHub의 타임라인에 접속하는 예제입니다. ::
 
     >>> r = requests.get('https://api.github.com/events')
 
@@ -33,11 +34,13 @@ Requests를 이용하여 리퀘스트를 만드는것은 매우 간단합니다.
 이 오브젝트에서 필요한 모든 정보를 가져올 수 있습니다.
 
 Requests의 간단한 API는 각각의 HTTP 리퀘스트 폼을 의미합니다.
+
 예를 들어 HTTP의 POST 리퀘스트를 만드는 방법입니다.::
 
     >>> r = requests.post('http://httpbin.org/post', data = {'key':'value'})
 
-그렇죠? 다른 HTTP 리퀘스트인 PUT, DELETE,HEAD 그리고 OPTIONS는 어떨까요?
+쉽죠? 다른 HTTP 리퀘스트인 PUT, DELETE,HEAD 그리고 OPTIONS는 어떨까요?
+
 예제를 보시죠 ::
 
     >>> r = requests.put('http://httpbin.org/put', data = {'key':'value'})
@@ -45,13 +48,14 @@ Requests의 간단한 API는 각각의 HTTP 리퀘스트 폼을 의미합니다.
     >>> r = requests.head('http://httpbin.org/get')
     >>> r = requests.options('http://httpbin.org/get')
 
-모두 좋습니다. 그러나 이것은 Requests로 할 수 있는 것중  일부입니다.
+모두 좋습니다. 그러나 이것은 Requests로 할 수 있는 것중 일부입니다.
 
 Passing Parameters In URLs
 --------------------------
 
 종종 URL 쿼리를 통해 데이터를 보내길 원합니다.
 만약 구성된 URL을 다룰줄 안다면, URL 뒤 물음표에 키와 값을 넣어 전송하는 방법을 알것입니다. e.g. ``httpbin.org/get?key=val``.
+
 Requests는 당신이 인자값을 ``params`` 키워드를 이용하여 dictionary로 보내는 것이 가능합니다.
 예를 들어 당신이 ``key1=value1`` 와 ``key2=value2`` 를 ``httpbin.org/get`` 에 보내고 싶다면 아래 코드와 같이 작성하면 됩니다.
 ::
@@ -59,13 +63,14 @@ Requests는 당신이 인자값을 ``params`` 키워드를 이용하여 dictiona
     >>> payload = {'key1': 'value1', 'key2': 'value2'}
     >>> r = requests.get('http://httpbin.org/get', params=payload)
 
-URL을 출력했을때 올바르게 적용되었음을 확인할 수 있습니다.::
+URL을 출력했을때 올바르게 적용되었음을 확인할 수 있습니다. ::
 
     >>> print(r.url)
     http://httpbin.org/get?key2=value2&key1=value1
 
-키 값이 ``None``이면 URL 쿼리문자에 포함되지 않습니다.
-당신은 또한 list를 값으로 갖을수도 있습니다 ::
+키 값이 ``None`` 이면 URL 쿼리문자에 포함되지 않습니다.
+
+당신은 또한 list를 값으로 갖을 수도 있습니다. ::
 
     >>> payload = {'key1': 'value1', 'key2': ['value2', 'value3']}
 
@@ -89,22 +94,22 @@ Requests는 서버에서 온 컨텐츠를 자동으로 decode 합니다.
 대부분의 유니코드 charset들은 자연스럽게 decode 될것입니다.
 
 리퀘스트를 만들었을때, Requests는 응답의 HTTP 헤더를 기반으로 encode을 알아냅니다
-``r.text``를 사용할 때 Requests를 통해 알아낸 인코딩을 합니다.
+``r.text`` 를 사용할 때 Requests를 통해 알아낸 인코딩을 합니다.
 당신은 ``r.encoding`` 을 통해 Requests에서 무엇으로 encoding 했는지 찾을수 있고 바꿀수도 있습니다.::
 
     >>> r.encoding
     'utf-8'
     >>> r.encoding = 'ISO-8859-1'
 
-만약 encoding을 바꾸고 싶으면, Requests는 ``r.encoding``에 새로운 값을 넣어 바꿀수 있습니다.
+만약 encoding을 바꾸고 싶으면, Requests는 ``r.encoding`` 에 새로운 값을 넣어 바꿀수 있습니다.
 당신이 컨탠츠에 새로운 인코딩 로직을 적용하는것을 원할 수 있습니다.
 예를들어, HTTP나 XML은 body안에 명시할 수 있습니다.
-이와 같은경우 당신이 ``r.content`` 를 이용해 encoding을 찾고 ``r.encoding``을 설정할 수 있습니다.
-당신이 ``r.text``를 바른 encoding을 사용 할 수 있게 해줍니다.
+이와 같은경우 당신이 ``r.content`` 를 이용해 encoding을 찾고 ``r.encoding`` 을 설정할 수 있습니다.
+당신이 ``r.text`` 를 바른 encoding을 사용 할 수 있게 해줍니다.
 
 Requests는 필요하다면 커스텀 encoding을 이용할 수 있습니다.
 ``codec`` 모듈로 자신만의 encoding을 만들고 등록한다면,
-당신은 쉽게 ``r.encoding``값에 codec 이름으로 설정할수 있습니다. 그리고 Requests는 설정된 것을 이용해 decoding 할 것 입니다.
+당신은 쉽게 ``r.encoding`` 값에 codec 이름으로 설정할수 있습니다. 그리고 Requests는 설정된 것을 이용해 decoding 할 것 입니다.
 
 Binary Response Content
 -----------------------
@@ -114,7 +119,7 @@ non-text 응답을 받을때 바디의 byte에 접근이 가능합니다.::
     >>> r.content
     b'[{"repository":{"open_issues":0,"url":"https://github.com/...
 
-``gzip``이나 ``deflate`` 와같은 전송인코딩을 자동적으로 디코드해줍니다.
+``gzip`` 이나 ``deflate`` 와같은 전송인코딩을 자동적으로 디코드해줍니다.
 
 다음은 응답에서 받은 바이너리 데이터에서 이미지를 만드는 예제입니다.::
 
@@ -135,21 +140,21 @@ JSON 디코더도 포함되어 있어 JSON 데이터를 처리 할 수 있습니
     >>> r.json()
     [{u'repository': {u'open_issues': 0, u'url': 'https://github.com/...
 
-JSON 디코딩이 실패했을때 ``r.json``은 예외를 발생합니다.
+JSON 디코딩이 실패했을때 ``r.json`` 은 예외를 발생합니다.
 예를 들어, 만약 응답에서 204(컨텐츠 없음)을 받는다던지, 유효하지 않는 JSON을 받는다면
-``r.json``은 ``ValueError: No JSON object could be decoded``를 발생합니다.
+``r.json`` 은 ``ValueError: No JSON object could be decoded`` 를 발생합니다.
 
-특히``r.json`` 은 응답의 성공을 알려주지 않으니 주의하세요.
+특히 ``r.json`` 은 응답의 성공을 알려주지 않으니 주의하세요.
 몇 서버들은 failed response(에러코드 HTTP 500)와 함께JSON object를 전송합니다.
 어떤 JSON들은 decod되어 반환되기도 합니다.
-리퀘스트의 성공을 확인하기위해, ``r.raise_for_status()`` 나 ``r.status_code``를 체크하세요.
+리퀘스트의 성공을 확인하기위해, ``r.raise_for_status()`` 나 ``r.status_code`` 를 체크하세요.
 
 Raw Response Content
 --------------------
 
-드문 경우로 서버에서 raw socket 응답을 받을수 있습니다. 이때 ``r.raw``로 접근할 수 있습니다.
+드문 경우로 서버에서 raw socket 응답을 받을수 있습니다. 이때 ``r.raw`` 로 접근할 수 있습니다.
 
-raw socket 응답을 받길 원한다면 ,리퀘스트를 보낼때 ``stream=True``를 설정하세요. 한번 해보면 쉽게 할수 있습니다.::
+raw socket 응답을 받길 원한다면 ,리퀘스트를 보낼때 ``stream=True`` 를 설정하세요. 한번 해보면 쉽게 할수 있습니다.::
 
     >>> r = requests.get('https://api.github.com/events', stream=True)
 
@@ -165,13 +170,13 @@ raw socket 응답을 받길 원한다면 ,리퀘스트를 보낼때 ``stream=Tru
         for chunk in r.iter_content(chunk_size):
             fd.write(chunk)
 
-대부분을 ``Response.iter_content``를 이용하여 관리할 수 있습니다 그렇지만 ``Response.raw``를 직접 이용하여 관리해도 됩니다.
-스트리밍 다운로드를 할때 , 컨텐츠를 가져오는 방법은 ``Response.iter_content``를 이용하는것을 권장합니다.
+대부분을 ``Response.iter_content`` 를 이용하여 관리할 수 있습니다 그렇지만 ``Response.raw`` 를 직접 이용하여 관리해도 됩니다.
+스트리밍 다운로드를 할때 , 컨텐츠를 가져오는 방법은 ``Response.iter_content`` 를 이용하는것을 권장합니다.
 
 Custom Headers
 --------------
 
-만약 리퀘스트에 HTTP 헤더를 추가하고싶다면, 간단하게 ``dict``로 작성하여 ``headers`` 파라메터를 이용하시면 됩니다.
+만약 리퀘스트에 HTTP 헤더를 추가하고싶다면, 간단하게 ``dict`` 로 작성하여 ``headers`` 파라메터를 이용하시면 됩니다.
 
 예를 들어, 우리는 이전 예제에서 우리의 user-agent를 명시하기 싫다면 다음과 같이 변경할수 있습니다.::
 
@@ -184,7 +189,7 @@ Custom Headers
 Note: 커스텀 헤더들은 더 많은 정보를 설정하는것보다 우선순위가 떨어집니다??. 예를 들면 :
 
 * Authorization headers set with `headers=` will be overridden if credentials
-  are specified in ``.netrc``, which in turn will be overridden by the  ``auth=``
+  are specified in ``.netrc`` , which in turn will be overridden by the ``auth=``
   parameter.
 * Authorization headers will be removed if you get redirected off-host.
 * Proxy-Authorization headers will be overridden by proxy credentials provided in the URL.
@@ -197,7 +202,7 @@ More complicated POST requests
 ------------------------------
 
 일반적으로, 당신은 HTML폼과 같은 폼에 encoded 데이터를 보내고 싶어 할껍니다.
-이것을 위해, dictionary로 ``data``인자에 넣을 수 있습니다.
+이것을 위해, dictionary로 ``data`` 인자에 넣을 수 있습니다.
 리퀘스트를 만들때 데이터를 적은 dictionary 들은 자동적으로 폼에 맞게 수정될 것입니다.::
 
     >>> payload = {'key1': 'value1', 'key2': 'value2'}
@@ -214,7 +219,7 @@ More complicated POST requests
     }
 
 form-encoded 가아닌 데이터를 보내고 싶을 수 있습니다.
-만약 ``dict`` 대신 ``string``을 넣고싶다면, 다음과 같이 넣을 수 있습니다.
+만약 ``dict`` 대신 ``string`` 을 넣고싶다면, 다음과 같이 넣을 수 있습니다.
 
 예를들어, GitHub API v3는 POST/PATCH로 JSON 형식을 이용해 데이터를 전송하는것을 허락합니다.::
 
@@ -281,7 +286,7 @@ Requests는 쉽게 Multipart-encoded 파일을 올릴 수 있습니다 ::
     }
 
 stream을 이용하여 ``multipart/form-data`` 리퀘스트로 큰 파일을 보낼 수 있습니다.
-기본적으로, ``requests``는 이것을 지원하지 않습니다. 그러나 ``requests-toolbelt``에서 지원하고 있습니다.
+기본적으로, ``requests`` 는 이것을 지원하지 않습니다. 그러나 ``requests-toolbelt`` 에서 지원하고 있습니다.
 `the toolbelt's documentation <https://toolbelt.readthedocs.io>`_ 에서 사용법을 읽고 사용해 보세요.
 하나의 리퀘스트에서 여러파일을 보내는 것은 :ref:`advanced <advanced>` 에서 확인 할 수있습니다.
 
@@ -322,7 +327,7 @@ Response Status Codes
         raise http_error
     requests.exceptions.HTTPError: 404 Client Error
 
-그러나 ``raise_for_status()``를 사용하여 ``r``의 ``status_code``가 ``200`` 임을 알수 있습니다.::
+그러나 ``raise_for_status()`` 를 사용하여 ``r`` 의 ``status_code`` 가 ``200`` 임을 알수 있습니다.::
 
     >>> r.raise_for_status()
     None

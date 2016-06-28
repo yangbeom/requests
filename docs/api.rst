@@ -125,7 +125,7 @@ Migrating to 1.x
 API Changes
 ~~~~~~~~~~~
 
-* ``Response.json`` 를 사용할수 있습니다. 이 ``Response.json``은 응답 속성이 아닙니다.
+* ``Response.json`` 를 사용할수 있습니다. 이 ``Response.json`` 은 응답 속성이 아닙니다.
   ::
 
       import requests
@@ -133,7 +133,7 @@ API Changes
       r.json()   # This *call* raises an exception if JSON decoding fails
 
 * ``Session`` API가 변했습니다. Session objects는 더 이상 매개변수를 갖지 않습니다.
-  ``Session``은 또한 대문자로 사용합니다. 그러나 이전의 ``session``과 같은 역할을 합니다.
+  ``Session`` 은 또한 대문자로 사용합니다. 그러나 이전의 ``session`` 과 같은 역할을 합니다.
 
 
   ::
@@ -154,8 +154,8 @@ API Changes
 .. _requests-oauthlib: https://github.com/requests/requests-oauthlib
 .. _requests-kerberos: https://github.com/requests/requests-kerberos
 
-* 스트리밍 관련 환경변수가 ``prefetch``에서 ``stream``으로 변경되었으며 로직을 바꾸었습니다.
-  또한, ``stream``은 raw response 를 읽는데 요구됩니다.
+* 스트리밍 관련 환경변수가 ``prefetch`` 에서 ``stream`` 으로 변경되었으며 로직을 바꾸었습니다.
+  또한, ``stream`` 은 raw response 를 읽는데 요구됩니다.
   ::
 
       # in 0.x, passing prefetch=False would accomplish the same thing
@@ -163,7 +163,7 @@ API Changes
       for chunk in r.iter_content(8192):
           ...
 
-* ``config`` 변수는 requests method에서 제거되었습니다. keep-alive 나 최대 redirects와 같은 몇몇 옵션들은 ``Session``을
+* ``config`` 변수는 requests method에서 제거되었습니다. keep-alive 나 최대 redirects와 같은 몇몇 옵션들은 ``Session`` 을
   사용하시면 됩니다.
   여러 옵션은 환경변수 로깅에 의해 제어됩니다.
   ::
@@ -216,15 +216,15 @@ API Changes
 ~~~~~~~~~~~
 
 * 다음은 Requests의 예외를 처리하는 방법에 대해 두가지의 변경이 있습니다.
-  ``RequestException``은 더 이상 error 타입의 정확하고 세분화시키기 위하여
-  ``RuntimeError``가 아닌 ``IOError``를 subclass로 갖고 있습니다.
-  또한 인식 불가능한 URL escape sequence에 대해서는 ``ValueError``이 아닌 ``RequestException``가 출력됩니다.
+  ``RequestException`` 은 더 이상 error 타입의 정확하고 세분화시키기 위하여
+  ``RuntimeError`` 가 아닌 ``IOError`` 를 subclass로 갖고 있습니다.
+  또한 인식 불가능한 URL escape sequence에 대해서는 ``ValueError`` 이 아닌 ``RequestException`` 가 출력됩니다.
 
   ::
 
       requests.get('http://%zz/')   # raises requests.exceptions.InvalidURL
 
-  마지막으로, 정확하지 않은 encoding으로 발생되던 ``httplib.IncompleteRead`` 예외는 ``ChukedEncodingError``가 대신 발생합니다.
+  마지막으로, 정확하지 않은 encoding으로 발생되던 ``httplib.IncompleteRead`` 예외는 ``ChukedEncodingError`` 가 대신 발생합니다.
 
 * proxy API는 약간 변경 되었습니다. proxy URL을 위한 scheme이 요구됩니다.
 
@@ -242,6 +242,6 @@ API Changes
 Behavioural Changes
 ~~~~~~~~~~~~~~~~~~~
 
-* ``headers``의 dictionary키는 이제 모든 Python 버전에서 기본 스트링으로 적용됩니다.
+* ``headers`` 의 dictionary키는 이제 모든 Python 버전에서 기본 스트링으로 적용됩니다.
   예를 들면 Python 2에서는 bytestring으로 Python 3에서는 unicode로 적용이됩니다.
   만약 key들을 기본 문자열로 사용하지 않는다면 UTF-8 인코딩을 기본으로 변환하게 됩니다.
