@@ -43,22 +43,22 @@ Feature Support
 
 Requests는 최신 web에 대한 준비가 되어 있습니다.
 
--- 국제적 도메인과 URLs
--- Keep-Alive & Connection Pooling
--- 세션과 쿠키
--- 브라우저와 같은 SSL을 이용한 연결
--- 기존/경량화된 인증
--- 우아한 Key/Value 쿠키
--- 자동 압축해제
--- 컨텐츠 자동 디코딩
--- Respone 바디의 유니코드화
--- Multipart 파일 업로드
--- HTTP(S) Proxy 지원
--- Connection Timeouts
--- 스트리밍 다운로드
--- ``.netrc`` 지원
--- 파편화된 Requests
--- 스레드 안정성
+- 국제적 도메인과 URLs
+- Keep-Alive & Connection Pooling
+- 세션과 쿠키
+- 브라우저와 같은 SSL을 이용한 연결
+- 기존/경량화된 인증
+- 우아한 Key/Value 쿠키
+- 자동 압축해제
+- 컨텐츠 자동 디코딩
+- Respone 바디의 유니코드화
+- Multipart 파일 업로드
+- HTTP(S) Proxy 지원
+- Connection Timeouts
+- 스트리밍 다운로드
+- ``.netrc`` 지원
+- 파편화된 Requests
+- 스레드 안정성
 
 Requests는 Python 2.6 — 3.5, 그리고 PyPy를 지원합니다.
 

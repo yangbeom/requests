@@ -27,7 +27,6 @@ Requests 는 사람이 이해하기 쉬운 순수한 HTTP library입니다.
     >>> r.json()
     {u'private_gists': 419, u'total_private_repos': 77, ...}
 
-
 Requests를 사용하지 않은 유사코드는 `여기 <https://gist.github.com/973705>`_ 에서 보실 수 있습니다.
 
 Requests는 당신이 손쉽게 거대한 파일을 HTTP/1.1 requests로 보내는것을 가능케 해줍니다.
@@ -138,5 +137,4 @@ The Contributor Guide
    dev/authors
 
 
-더이상의 가이드는 없습니다. 당신은 이미 가이드가 필요 없기 때문이죠.
-Good luck.
+더이상의 가이드는 없습니다. 당신은 이미 가이드가 필요 없기 때문이죠 =)
